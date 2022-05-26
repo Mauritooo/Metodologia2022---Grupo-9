@@ -1,8 +1,14 @@
 Criterio de Done:
 
-* que la user story cumpla todos los criterios de aceptacion.
-* tiene que ser testeada por todos los miembros del Dev Team
-* que cumpla su funcionalidad 
-* adjuntar documentacion cuando sea posible 
-* todos los commit realizados desde git deben estar relacionados a las tarjetas de Jira
+Buenas Practicas en el codigo:
+
+* usar nombres cortos y representativos para variables y funciones en el codigo.
+* comentar brevemente en una linea el codigo escrito.
+
+Testing:
+
+* la funcionalidad debe cumplir con lo pactado en la tarjeta.
+* definir brevemente el funcionamiento de los metodos y funciones empleados.
+* tiene que ser testeada por al menos un companero del Dev Team.
+* se debe commitear que nro de tarjeta de Jira fue resuelta.
 
