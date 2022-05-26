@@ -1,6 +1,0 @@
-* El sistema debe ser seguro.
-* El sistema debe estar funcionando las 24 horas.
-* El sistema debe de ser de facil acceso.
-* El sistema debe ser capaz de operar con hasta 1000 usuarios con sesiones concurrentes.
-* Los permisos de acceso al sistema podrán ser cambiados solamente por el administrador de acceso a datos.
-* La aplicacion debe poder ser abierta desde cualquier navegador y dispositivo movil
