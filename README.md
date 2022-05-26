@@ -6,14 +6,6 @@
 - USM: https://miro.com/app/board/uXjVO2czbJg=/
 
 
-#### Criterio de Done:
-
-- Que la user story cumpla todos los criterios de aceptacion.
-- Tiene que ser testeada por todos los miembros del Dev Team
-- Que cumpla su funcionalidad
-- Adjuntar documentacion cuando sea posible
-- Todos los commit realizados desde git deben estar relacionados a las tarjetas de Jira
-
 #### USM
 ![](https://raw.githubusercontent.com/Mauritooo/Metodologia2022---Grupo-9/main/User%20Story%20Map.jpg)
 
