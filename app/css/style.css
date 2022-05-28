@@ -1,0 +1,55 @@
+html {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+    background-color: E5E5E5;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+ion-content {
+    --ion-background-color:#E5E5E5;
+}
+
+ion-card-content {
+    background-color: #FFFFFF;
+}
+
+ion-avatar {     
+    max-width: 48px !important;
+    max-height: 48px !important;
+}
+
+ion-card {
+    padding: 0;
+}
+
+.ion-page {
+    padding: 8px;
+}
+
+ion-icon {
+    color: #3880FF;
+    font-size: 28px;
+}
+
+.sc-ion-searchbar-md-h {
+    --border-radius: 6px;
+    --box-shadow: 0px;
+}
+
+.header-card-turno {
+    background-color: #FFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.info-turno {
+    display: flex;
+    flex-direction: column;
+    padding-left: 12px;
+}
