@@ -19,6 +19,11 @@ class UsuarioModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function InsertarUsuario($dni,$nombre_apellido,$email,$obraSocial, $nro_afiliado){
+    $sentencia = $this->db->prepare("INSERT INTO usuario(dni, rol, nombre_apellido, num_afiliado, obra_social, email) VALUES(?,?,?,?,?,?)");
+    $sentencia->execute(array($dni, 'p', $nombre_apellido, $nro_afiliado, $obraSocial, $email));
+  }
+
 }
 
 ?>

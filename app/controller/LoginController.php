@@ -18,6 +18,10 @@ class LoginController
     $this->view->mostrarLogin();
   }
 
+  function Registrar(){
+    $this->view->mostrarRegistrar();
+  }
+
   function logout() {
     session_start();
     session_destroy();
@@ -40,6 +44,21 @@ class LoginController
         
     }else{
       //si el usuario no existe debe redireccionar al registro
+    }
+  }
+
+  function registrarUsuario(){
+    $nombre_apellido = $_POST["name_apellido"];
+    $dni = $_POST["dni"];
+    $direccion = $_POST["direccion"];
+    $telefono = $_POST["telefono"];
+    $email = $_POST["email"];
+    $obraSocial = $_POST["obraSocial"];
+    $nro_afiliado = $_POST["obraSocial"];
+
+    if($nombre_apellido && $dni && $obraSocial && $nro_afiliado){
+      $this->model->InsertarUsuario($dni,$nombre_apellido,$email,$obraSocial, $nro_afiliado);
+      $this->verificarLogin();
     }
   }
 

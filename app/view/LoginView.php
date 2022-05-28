@@ -14,6 +14,12 @@ class LoginView
     $this->Smarty->display('templates/login.tpl');
   }
 
+  function mostrarRegistrar(){
+    $smarty = new Smarty();
+    $smarty->display('templates/registrar.tpl');
+  }
+
+
 }
 
  ?>
