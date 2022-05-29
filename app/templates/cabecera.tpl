@@ -23,13 +23,13 @@
       <span class="mensaje-bienvenida">
         <h3>Hola,</h3>
         <h2><b>{{$usuario[0].nombre_apellido}}! <ion-icon name="hand-left" color="yellow"></ion-icon></b></h2>
-        {if ${$usuario[0].rol eq "p"}
+        {if {$usuario[0].rol} eq "p"}
           <h3>¿Queres sacar un turno? <ion-icon name="arrow-down-sharp"></ion-icon></h3>
-        {elseif ${$usuario[0].rol eq "m"}
+        {elseif {$usuario[0].rol} eq "m"}
           <h3>¡Tus pacientes estan esperando! <ion-icon name="arrow-down-sharp"></ion-icon></h3>
-        {elseif ${$usuario[0].rol eq "s"}
+        {elseif {$usuario[0].rol} eq "s"}
           <h3>Carga disponibilidad para tus médicos <ion-icon name="arrow-down-sharp"></ion-icon></h3>
-        {elseif ${$usuario[0].rol eq "a"}
+        {elseif {$usuario[0].rol} eq "a"}
           <h2>Eres Administrador <ion-icon name="warning"></ion-icon></h2>
           <h3>Crea cuentas para el personal <ion-icon name="arrow-down-sharp"></ion-icon></h3>
         {/if}

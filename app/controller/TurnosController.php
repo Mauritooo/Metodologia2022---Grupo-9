@@ -16,8 +16,14 @@ class TurnosController
   function Home(){
     session_start();
     if(isset($_SESSION["User"])) {
-      $dni = $_SESSION["User"];
-      $usuario = $this->modelusuarios->getUser($dni);
+      if (is_numeric($_SESSION["User"])) {
+        $dni = $_SESSION["User"];
+        $usuario = $this->modelusuarios->getUser($dni);
+      } else {
+        $nombre_usuario = $_SESSION["User"];
+        $usuario = $this->modelusuarios->getUserStaff($nombre_usuario);
+      }
+
       
       //si no existe el dni en base se redirecciona a registro
       if ($usuario[0] == NULL) {

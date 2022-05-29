@@ -19,11 +19,6 @@ class LoginView
     $smarty->display('templates/registrar.tpl');
   }
 
-  function registrarByAdmin(){
-    $smarty = new Smarty();
-    $smarty->display('templates/registrarByAdmin.tpl');
-  }
-
 }
 
  ?>
