@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 27-05-2022 a las 20:43:00
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 7.4.27
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 29-05-2022 a las 22:40:59
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -68,7 +68,11 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `dni`, `pass`, `rol`, `nombre_apellido`, `especialidad`, `num_afiliado`, `obra_social`, `email`) VALUES
 (6, 42041728, 'prueba123', 'p', 'Nahuel Ruppel', NULL, 1234567891, 'Osecac', 'nahuelruppel10@gmail.com'),
-(7, 34678980, 'prueba123', 'm', 'Prueba Medico', 'Odontologo', NULL, 'Osecac', 'prueba123@gmail.com');
+(7, 34678980, 'prueba123', 'm', 'Prueba Medico', 'Odontologo', NULL, 'Osecac', 'prueba123@gmail.com'),
+(8, 67984545, '', 'p', 'Pruseba Usuario2', NULL, 0, 'Osecac', 'nahuel@gmail.com'),
+(9, 0, '$2y$10$xKIDJTlV0CyEHifAHCnmt.gI3/SwMnjh7SGMtGc0xPnwiHWKRyyC2', 'm', 'medico', NULL, NULL, '', ''),
+(10, 0, '$2y$10$tY/X2r3eLNDpDe2ZWMct4ukpbWtah.m12ysnyAxJFDx12HQqJPAa2', 's', 'secretaria', NULL, NULL, '', ''),
+(11, 0, '$2y$10$39ueCRYOSTYGFiYol5BitOhqfWDbIp1i2cK0xEdzATQV/0Gl46pc2', 'a', 'admin', NULL, NULL, '', '');
 
 --
 -- Índices para tablas volcadas
@@ -103,7 +107,7 @@ ALTER TABLE `turno`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas
