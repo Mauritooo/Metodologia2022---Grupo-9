@@ -19,7 +19,6 @@ class LoginView
     $smarty->display('templates/registrar.tpl');
   }
 
-
 }
 
  ?>

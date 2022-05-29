@@ -89,6 +89,17 @@ class LoginController
     }
   }
 
+  function registrarUsuarioByAdmin(){
+    $user = $_POST["user"];
+    $password = $_POST["password"];
+    $confirmPassword = $_POST["confirmPassword"];
+    $tipo = $_POST["tipo"];
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+
+    $this->model->InsertarUsuarioByAdmin($user,$hash,$tipo);
+    HEADER(INICIO);
+  }
+
 }
 
 ?>

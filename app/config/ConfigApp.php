@@ -25,7 +25,8 @@ class ConfigApp
       'verificarlogin' => 'LoginController#verificarLogin',
       'verificarstaff' => 'LoginController#verificarStaff',
       'registrar'=> 'LoginController#Registrar',
-      'registrarusuario' => 'LoginController#registrarUsuario'
+      'registrarusuario' => 'LoginController#registrarUsuario',
+      'registrarUserByAdmin' => 'LoginController#registrarUsuarioByAdmin'
     ];
 
 }

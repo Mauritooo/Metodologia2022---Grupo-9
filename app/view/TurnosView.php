@@ -12,7 +12,7 @@ class TurnosView
 
   function Mostrar($usuario){
     $this->Smarty->assign('usuario',$usuario);
-    $this->Smarty->display('templates/lista_turnos.tpl');
+    $this->Smarty->display('templates/inicio.tpl');
   }
 }
 

@@ -31,6 +31,11 @@ class UsuarioModel
     $sentencia->execute(array($dni, 'p', $nombre_apellido, $nro_afiliado, $obraSocial, $email));
   }
 
+  function InsertarUsuarioByAdmin($nombre_apellido,$password,$tipo){
+    $sentencia = $this->db->prepare("INSERT INTO usuario(pass,rol, nombre_apellido) VALUES(?,?,?)");
+    $sentencia->execute(array($password, $tipo, $nombre_apellido));
+  }
+
 }
 
 ?>
