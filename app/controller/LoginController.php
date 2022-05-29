@@ -18,6 +18,10 @@ class LoginController
     $this->view->mostrarLogin();
   }
 
+  function staff() {
+    $this->view->mostrarLogin(true);
+  }
+
   function Registrar(){
     $this->view->mostrarRegistrar();
   }
@@ -32,7 +36,7 @@ class LoginController
     $dni = $_POST["dni"];
     $dbUser = $this->model->getUser($dni);
     
-    if(isset($dbUser)){
+    if(isset($dbUser[0])) {
       session_start();
       $_SESSION["User"] = $dni;
       header(INICIO);
@@ -43,7 +47,30 @@ class LoginController
       // }
         
     }else{
-      //si el usuario no existe debe redireccionar al registro
+      HEADER(REGISTER);
+    }
+  }
+
+  function verificarStaff() {
+    $usuario = $_POST["usuario"];
+    $pass = $_POST["pass"];
+    $dbUser = $this->model->getUserStaff($usuario);
+    
+    if(isset($dbUser[0])) {
+      if (password_verify($pass, $dbUser[0]["pass"])) {
+        session_start();
+        $_SESSION["User"] = $usuario;
+        header(INICIO);
+        // if ($dbUser[0]["admin"] == 1){
+        //   header(ADMIN);
+        // }else{
+        //   header(HOME);
+        // }
+      } else {
+        $this->view->mostrarLogin(true, "Contraseña incorrecta");
+      }
+    }else{
+      $this->view->mostrarLogin(true ,"Ese usuario no existe");
     }
   }
 

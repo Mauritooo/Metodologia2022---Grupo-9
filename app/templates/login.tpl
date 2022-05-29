@@ -22,7 +22,11 @@
                 <ion-title style="color: #7B61FF; font-weight: bold; font-size: 48px">Nombre</ion-title>
                 <ion-title style="color: #3880FF; font-weight: bold; font-size: 48px">Institución</ion-title>
 
-                <p>Tu calendario medicinal de la institución: <b>Nombre Institución.</b></p>
+                {if $es_login_staff}
+                    <p>Portal de acceso <b style="color: #FFC409">STAFF</b> para la institución: <b>Nombre Institución.</b></p>
+                {else}
+                    <p>Tu calendario medicinal de la institución: <b>Nombre Institución.</b></p>
+                {/if}
             </span>
             
         </ion-header> 
@@ -31,17 +35,39 @@
 
             <ion-card>
                 <ion-card-content>
-                    <form method="post" action="verificarlogin">
-                        <p>Ingresa tu DNI para continuar:</p>
-                        <ion-item>
-                            <ion-label>DNI:</ion-label>
-                            <ion-input type="number" name="dni"></ion-input>
-                        </ion-item>
+                    {if $es_login_staff}
+                        <form method="post" action="verificarstaff">
+                            <p>Ingresa tus credenciales de acceso para continuar:</p>
+                            <p><b style="color: #ff3a3a">{{$mensaje}}</b></p>
+                            <ion-item>
+                                <ion-label>Usuario:</ion-label>
+                                <ion-input type="text" name="usuario"></ion-input>
+                            </ion-item>
 
-                        <p>¿Olvidaste tu contraseña?</p>
+                            <ion-item>
+                                <ion-label>Contraseña:</ion-label>
+                                <ion-input type="password" name="pass"></ion-input>
+                            </ion-item>
 
-                        <ion-button type="submit" class="login-button" expand="block">CONTINUAR</ion-button>
-                    </form>
+                            <p>¿Olvidaste tu contraseña?</p>
+
+                            <ion-button type="submit" class="login-button" expand="block">INGRESAR</ion-button>
+                        </form>
+                    {else}
+                        <form method="post" action="verificarlogin">
+                            <p>Ingresa tu DNI para continuar:</p>
+                            <p><b style="color: #ff3a3a">{{$mensaje}}</b></p>
+                            <ion-item>
+                                <ion-label>DNI:</ion-label>
+                                <ion-input type="number" name="dni"></ion-input>
+                            </ion-item>
+
+                            <p>¿Olvidaste tu contraseña?</p>
+
+                            <ion-button type="submit" class="login-button" expand="block">CONTINUAR</ion-button>
+                        </form>
+                    {/if}
+
                 </ion-card-content>
             </ion-card>
 
@@ -54,16 +80,3 @@
 </body>
 
 </html>
-
-<!-- <form method="post" action="verificarlogin">
-    <div class="form-group">
-        <label for="usuarioForm">Usuario</label>
-        <input type="input" class="form-control" name="usuarioForm" id="usuarioForm" aria-describedby="usuarioForm" placeholder="Usuario">
-    </div>
-    <div class="form-group">
-        <label for="passwordForm">Password</label>
-        <input type="password" class="form-control" name="passwordForm" id="passwordForm" placeholder="Password">
-    </div>
-    <div class="">{$Message}</div>
-  <button type="submit" class="btn btn-primary">Login</button>
-</form> -->
