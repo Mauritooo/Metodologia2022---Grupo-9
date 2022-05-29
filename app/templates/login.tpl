@@ -36,8 +36,9 @@
             <ion-card>
                 <ion-card-content>
                     {if $es_login_staff}
-                        <form method="post" action="verificarStaff">
+                        <form method="post" action="verificarstaff">
                             <p>Ingresa tus credenciales de acceso para continuar:</p>
+                            <p><b style="color: #ff3a3a">{{$mensaje}}</b></p>
                             <ion-item>
                                 <ion-label>Usuario:</ion-label>
                                 <ion-input type="text" name="usuario"></ion-input>
@@ -50,11 +51,12 @@
 
                             <p>¿Olvidaste tu contraseña?</p>
 
-                            <ion-button type="submit" class="login-button" expand="block">CONTINUAR</ion-button>
+                            <ion-button type="submit" class="login-button" expand="block">INGRESAR</ion-button>
                         </form>
                     {else}
                         <form method="post" action="verificarlogin">
                             <p>Ingresa tu DNI para continuar:</p>
+                            <p><b style="color: #ff3a3a">{{$mensaje}}</b></p>
                             <ion-item>
                                 <ion-label>DNI:</ion-label>
                                 <ion-input type="number" name="dni"></ion-input>
@@ -78,16 +80,3 @@
 </body>
 
 </html>
-
-<!-- <form method="post" action="verificarlogin">
-    <div class="form-group">
-        <label for="usuarioForm">Usuario</label>
-        <input type="input" class="form-control" name="usuarioForm" id="usuarioForm" aria-describedby="usuarioForm" placeholder="Usuario">
-    </div>
-    <div class="form-group">
-        <label for="passwordForm">Password</label>
-        <input type="password" class="form-control" name="passwordForm" id="passwordForm" placeholder="Password">
-    </div>
-    <div class="">{$Message}</div>
-  <button type="submit" class="btn btn-primary">Login</button>
-</form> -->

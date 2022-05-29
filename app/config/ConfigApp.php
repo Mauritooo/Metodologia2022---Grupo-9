@@ -23,10 +23,11 @@ class ConfigApp
       'staff'=> 'LoginController#staff',
       'logout'=> 'LoginController#logout',
       'verificarlogin' => 'LoginController#verificarLogin',
+      'verificarstaff' => 'LoginController#verificarStaff',
       'registrar'=> 'LoginController#Registrar',
       'registrarusuario' => 'LoginController#registrarUsuario'
     ];
 
 }
 
- ?>
+?>
