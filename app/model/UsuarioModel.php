@@ -20,6 +20,7 @@ class UsuarioModel
   }
 
   function GetUserStaff($usuario){
+    //vamos a usar nombre_apellido como nombre de usuario para los usuarios staff
     $sentencia = $this->db->prepare("select * from usuario where nombre_apellido=? limit 1");
     $sentencia->execute(array($usuario));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
