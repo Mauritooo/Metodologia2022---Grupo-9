@@ -15,8 +15,8 @@ function parseURL($url)
 }
 
 if(isset($_GET['action'])){
-   #$urlData[ACTION] = borrar
-   #$urlData[PARAMS] = [1,2,3,4]
+  #$urlData[ACTION] = borrar
+  #$urlData[PARAMS] = [1,2,3,4]
 
     $urlData = parseURL($_GET['action']);
     $action = $urlData[ConfigApp::$ACTION];
