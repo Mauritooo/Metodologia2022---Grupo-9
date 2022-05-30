@@ -35,7 +35,7 @@ class UsuarioModel
     $sentencia = $this->db->prepare("INSERT INTO usuario(pass,rol, nombre_apellido) VALUES(?,?,?)");
     $sentencia->execute(array($password, $tipo, $nombre_apellido));
   }
-//INSERTAR TURNO  POR SECRETARIA.
+//INSERTAR TURNO POR SECRETARIA.
   function InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico){
     $sentencia = $this->db->prepare("INSERT INTO turno(id_usuario, id_autor, fecha, hora, razon_consulta, id_medico) VALUES(?,?,?,?,?,?)");
     $sentencia->execute(array($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico));
