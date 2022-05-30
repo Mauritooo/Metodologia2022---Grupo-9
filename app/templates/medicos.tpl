@@ -1,6 +1,6 @@
 {include file="cabecera.tpl" usuario=$usuario}
 <ion-content id="content-container">
-</br>
+<br>
 <ion-card-title>Medicos</ion-card-title>
 
 {foreach from=$medicos item=medico}
