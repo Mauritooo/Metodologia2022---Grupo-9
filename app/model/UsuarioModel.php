@@ -36,6 +36,33 @@ class UsuarioModel
     $sentencia->execute(array($password, $tipo, $nombre_apellido));
   }
 
+  function GetMedicos($bus){
+    $sentencia = $this->db->prepare("select * from usuario where rol=? and (obra_social like concat('%',?,'%') or especialidad like concat('%',?,'%'))");
+    #$sentencia = $this->db->prepare("select * from usuario where rol='m'" );
+    #$sentencia->execute(); 
+    $sentencia->execute(array('m',$bus,$bus));
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function GetMedicoId($id_medico){
+    $sentencia = $this->db->prepare("select * from usuario where id=? limit 1");
+    $sentencia->execute(array($id_medico));
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function GetTurnosUsuario($id_usuario){
+    $sentencia = $this->db->prepare("select * from turno where id_usuario=?");
+    $sentencia->execute(array($id_usuario));
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function ListarTurnosMedicos($id_medico){
+    $sentencia = $this->db->prepare("select * from turno where id_medico=? and fecha >= now()");
+    $sentencia->execute(array($id_medico));
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+  
+
 }
 
 ?>
