@@ -61,7 +61,6 @@ class UsuarioModel
     $sentencia->execute(array($id_medico));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
-  
 
 }
 
