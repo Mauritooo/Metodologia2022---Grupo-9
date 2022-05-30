@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-05-2022 a las 22:40:59
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.29
+-- Tiempo de generación: 30-05-2022 a las 22:27:18
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `a_cargo`
+--
+
+CREATE TABLE `a_cargo` (
+  `id_a_cargo` int(11) NOT NULL,
+  `id_secretaria` int(11) NOT NULL,
+  `id_medico` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `a_cargo`
+--
+
+INSERT INTO `a_cargo` (`id_a_cargo`, `id_secretaria`, `id_medico`) VALUES
+(1, 12, 7),
+(2, 10, 8),
+(3, 12, 9);
 
 -- --------------------------------------------------------
 
@@ -42,6 +63,9 @@ CREATE TABLE `turno` (
 --
 
 INSERT INTO `turno` (`id_turno`, `id_usuario`, `id_autor`, `fecha`, `hora`, `razon_consulta`, `id_medico`) VALUES
+(2, 6, 6, '2022-05-30 05:57:30', '11:00', 'dolor de cabeza', 7),
+(3, 6, 6, '2022-05-30 05:59:44', '12:00', 'dolor de barriga', 7),
+(4, 6, 6, '2022-05-30 16:57:12', '13:00', 'dolor de rodilla', 8),
 (54, 6, 6, '2022-05-27 16:23:05', '10:00', 'Me duele el pie', 7);
 
 -- --------------------------------------------------------
@@ -69,14 +93,23 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`id`, `dni`, `pass`, `rol`, `nombre_apellido`, `especialidad`, `num_afiliado`, `obra_social`, `email`) VALUES
 (6, 42041728, 'prueba123', 'p', 'Nahuel Ruppel', NULL, 1234567891, 'Osecac', 'nahuelruppel10@gmail.com'),
 (7, 34678980, 'prueba123', 'm', 'Prueba Medico', 'Odontologo', NULL, 'Osecac', 'prueba123@gmail.com'),
-(8, 67984545, '', 'p', 'Pruseba Usuario2', NULL, 0, 'Osecac', 'nahuel@gmail.com'),
+(8, 67984545, '', 'm', 'Pruseba Usuario2', NULL, 0, 'Osecac', 'nahuel@gmail.com'),
 (9, 0, '$2y$10$xKIDJTlV0CyEHifAHCnmt.gI3/SwMnjh7SGMtGc0xPnwiHWKRyyC2', 'm', 'medico', NULL, NULL, '', ''),
-(10, 0, '$2y$10$tY/X2r3eLNDpDe2ZWMct4ukpbWtah.m12ysnyAxJFDx12HQqJPAa2', 's', 'secretaria', NULL, NULL, '', ''),
-(11, 0, '$2y$10$39ueCRYOSTYGFiYol5BitOhqfWDbIp1i2cK0xEdzATQV/0Gl46pc2', 'a', 'admin', NULL, NULL, '', '');
+(10, 42345678, '$2y$10$tY/X2r3eLNDpDe2ZWMct4ukpbWtah.m12ysnyAxJFDx12HQqJPAa2', 's', 'secretaria', NULL, NULL, '', ''),
+(11, 0, '$2y$10$39ueCRYOSTYGFiYol5BitOhqfWDbIp1i2cK0xEdzATQV/0Gl46pc2', 'a', 'admin', NULL, NULL, '', ''),
+(12, 42463568, 'prueb123', 's', 'prueba secretare', NULL, NULL, 'Osde', 'secretaria@hotmail.com');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `a_cargo`
+--
+ALTER TABLE `a_cargo`
+  ADD PRIMARY KEY (`id_a_cargo`),
+  ADD KEY `a_cargo_ibfk_1` (`id_secretaria`),
+  ADD KEY `a_cargo_ibfk_2` (`id_medico`);
 
 --
 -- Indices de la tabla `turno`
@@ -98,6 +131,12 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `a_cargo`
+--
+ALTER TABLE `a_cargo`
+  MODIFY `id_a_cargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `turno`
 --
 ALTER TABLE `turno`
@@ -107,11 +146,18 @@ ALTER TABLE `turno`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `a_cargo`
+--
+ALTER TABLE `a_cargo`
+  ADD CONSTRAINT `a_cargo_ibfk_1` FOREIGN KEY (`id_secretaria`) REFERENCES `usuario` (`id`),
+  ADD CONSTRAINT `a_cargo_ibfk_2` FOREIGN KEY (`id_medico`) REFERENCES `usuario` (`id`);
 
 --
 -- Filtros para la tabla `turno`
