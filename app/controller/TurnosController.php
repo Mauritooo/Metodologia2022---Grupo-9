@@ -1,7 +1,6 @@
 <?php
 require_once  "./view/TurnosView.php";
 require_once  "./model/UsuarioModel.php";
-require_once  "./model/TurnosModel.php";
 
 class TurnosController
 {
@@ -12,7 +11,6 @@ class TurnosController
   {
     $this->view = new TurnosView();
     $this->modelusuarios = new UsuarioModel();
-    $this->modelturnos = new TurnosModel();
   }
 
   function Home(){
