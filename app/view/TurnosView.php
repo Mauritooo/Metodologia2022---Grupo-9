@@ -10,9 +10,10 @@ class TurnosView
     $this->Smarty = new Smarty();
   }
 
-  function Mostrar($usuario, $turnosP, $turnosM){
+  function Mostrar($usuario, $turnosP, $turnosM, $medicos_S){
     $this->Smarty->assign('turnosP',$turnosP);
     $this->Smarty->assign('turnosM',$turnosM);
+    $this->Smarty->assign('medicos_S',$medicos_S);
     $this->Smarty->assign('usuario',$usuario);
     $this->Smarty->display('templates/inicio.tpl');
   }

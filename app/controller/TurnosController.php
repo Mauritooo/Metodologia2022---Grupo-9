@@ -36,7 +36,8 @@ class TurnosController
         $turnosM = $this->modelusuarios->ListarTurnosMedicos($usuario[0]['id']);
         #echo($turnos[0]['fecha']);
         #$turnos = null;
-        $this->view->Mostrar($usuario,$turnosP,$turnosM);
+        $medicos_S = $this->modelusuarios->ListarMedicosAcargo($usuario[0]['id']);
+        $this->view->Mostrar($usuario,$turnosP,$turnosM,$medicos_S);
       }
     }else{
       HEADER(LOGIN);
