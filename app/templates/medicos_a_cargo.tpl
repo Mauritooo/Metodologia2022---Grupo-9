@@ -13,11 +13,11 @@
             <span class="info-turno">
                 <ion-card-title>{$medico['nombre_apellido']}</ion-card-title>
                 <ion-card-subtitle>{$medico['especialidad']}</ion-card-subtitle>
+                 <ion-card-subtitle>{$medico['obra_social']}</ion-card-subtitle>
             </span>
 
         </ion-card-header>
         <ion-card-content class="bottom-card-turno">
-            <h5>Obra Social: {$medico['obra_social']}</h5>
             <h5>Email: {$medico['email']}</h5>
         </ion-card-content>
     </ion-card>
