@@ -28,10 +28,15 @@ class TurnosController
       if ($usuario[0] == NULL) {
         HEADER(REGISTER);
       } else {
-        $turnos = $this->modelusuarios->ListarTurnosMedicos($usuario[0]['id']);
+        $turnosP = $this->modelusuarios->GetTurnosUsuario($usuario[0]['id']);
+        foreach ($turnosP as $clave => $turno) {
+          $medico = $this->modelusuarios->GetMedicoId($turno['id_medico']);
+          $turnosP[$clave]['nombre_medico'] = $medico[0]['nombre_apellido'];
+        }
+        $turnosM = $this->modelusuarios->ListarTurnosMedicos($usuario[0]['id']);
         #echo($turnos[0]['fecha']);
         #$turnos = null;
-        $this->view->Mostrar($usuario,$turnos);
+        $this->view->Mostrar($usuario,$turnosP,$turnosM);
       }
     }else{
       HEADER(LOGIN);
@@ -64,7 +69,6 @@ class TurnosController
     
   }
 
- 
 }
 
 ?>
