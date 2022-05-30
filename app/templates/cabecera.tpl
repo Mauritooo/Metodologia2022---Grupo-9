@@ -35,7 +35,23 @@
         {/if}
       </span>
 
-      <div class="barra-busqueda">
-        <ion-searchbar placeholder="Buscar médicos..." style="padding: 0;"></ion-searchbar>
+      {if {$usuario[0].rol} eq "s" || {$usuario[0].rol} eq "p"  || {$usuario[0].rol} eq "a"}
+        <div class="barra-busqueda">
+        <form method="post" action="GetMedicos">
+          <ion-item>
+            <ion-label>Obra social o especialidad:</ion-label>
+            <ion-input type="text" name="nombre"></ion-input>
+          </ion-item>
+
+          <ion-button type="submit" class="login-button" expand="block">Buscar</ion-button>
+          
+        </form>
+
       </div>
+      {/if}
+
+      
+        
     </ion-header>
+
+    
