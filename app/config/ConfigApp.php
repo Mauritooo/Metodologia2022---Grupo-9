@@ -26,7 +26,8 @@ class ConfigApp
       'verificarstaff' => 'LoginController#verificarStaff',
       'registrar'=> 'LoginController#Registrar',
       'registrarusuario' => 'LoginController#registrarUsuario',
-      'registrarUserByAdmin' => 'LoginController#registrarUsuarioByAdmin'
+      'registrarUserByAdmin' => 'LoginController#registrarUsuarioByAdmin',
+      'GetMedicos' => 'TurnosController#GetMedicos'
     ];
 
 }
