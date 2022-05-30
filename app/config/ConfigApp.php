@@ -27,6 +27,7 @@ class ConfigApp
       'registrar'=> 'LoginController#Registrar',
       'registrarusuario' => 'LoginController#registrarUsuario',
       'registrarUserByAdmin' => 'LoginController#registrarUsuarioByAdmin',
+      'registrarTurnoBySecretary' => 'TurnosController#registrarTurnoBySecretaria',
       'GetMedicos' => 'TurnosController#GetMedicos'
     ];
 
