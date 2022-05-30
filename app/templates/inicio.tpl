@@ -1,4 +1,5 @@
 {include file="cabecera.tpl" usuario=$usuario}
+
 <ion-content id="content-container">
 {if {$usuario[0].rol} eq "p"}
     {include file="mis_turnos.tpl" turnosP=$turnosP}
@@ -10,4 +11,5 @@
     {include file="cargar_usuario.tpl"}
 {/if}
 </ion-content>
+
 {include file="footer.tpl"}

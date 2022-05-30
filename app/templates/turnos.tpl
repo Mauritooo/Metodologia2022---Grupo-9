@@ -20,4 +20,4 @@
             <h5>Hora: {$turno['hora']}</h5>
         </ion-card-content>
     </ion-card>
-{/foreach}    
+{/foreach}
