@@ -40,7 +40,6 @@ class TurnosView
   function mostrarFormulario() {
     $this->Smarty->display('templates/cargar_turno.tpl');
   }
-
 }
 
 ?>
