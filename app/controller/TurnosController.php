@@ -78,6 +78,25 @@ class TurnosController
     
   }
 
+  function GetFormPaciente(){
+    $this->view->mostrarFormulario();
+    
+  }
+
+  function AgendarTurnoPaciente(){
+
+    $id_user = $_POST["id_user"];
+    $id_autor = $_POST["id_autor"];
+    $fecha = $_POST["fecha"];
+    $hora = $_POST["hora"];
+    $razon_consulta = $_POST["razon_consulta"];
+    $id_medico = $_POST["id_medico"];
+    if(!empty($id_user) && !empty($id_autor) && !empty($id_medico)){
+      $this->modelturnos->InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico);
+      HEADER(INICIO);
+    }
+  }
+
   function BorrarTurno($param){
     $this->modelturnos->DeleteTurno($param[0]);
     HEADER(INICIO);

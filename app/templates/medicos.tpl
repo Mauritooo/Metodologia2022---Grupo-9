@@ -20,6 +20,9 @@
         </ion-card-header>
         <ion-card-content class="bottom-card-turno">
             <h5>Obra Social: {$medico['obra_social']}</h5>
+            <h4><a href="getformpaciente"><ion-button>
+                Agendar Turno
+        </ion-button></a></h4>
         </ion-card-content>
     </ion-card>
 {/foreach}    

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-05-2022 a las 05:59:08
+-- Tiempo de generación: 31-05-2022 a las 07:23:39
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -65,7 +65,10 @@ CREATE TABLE `turno` (
 INSERT INTO `turno` (`id_turno`, `id_usuario`, `id_autor`, `fecha`, `hora`, `razon_consulta`, `id_medico`) VALUES
 (2, 6, 12, '2022-06-09 23:01:48', '14:00', 'dolor de espalda', 7),
 (4, 6, 10, '2022-05-30 16:57:12', '13:00', 'dolor de rodilla', 8),
-(8, 6, 12, '2022-06-09 23:01:48', '14:00', 'dolor de pecho', 9);
+(8, 6, 12, '2022-06-09 23:01:48', '14:00', 'dolor de pecho', 9),
+(55, 6, 12, '2022-06-18 00:00:00', '17:20', 'dolor de hombro', 7),
+(57, 6, 12, '2022-06-24 00:00:00', '18:00', 'dolor de muela', 7),
+(58, 6, 12, '2022-06-25 00:00:00', '20:22', 'cambio de muela', 7);
 
 -- --------------------------------------------------------
 
@@ -139,7 +142,7 @@ ALTER TABLE `a_cargo`
 -- AUTO_INCREMENT de la tabla `turno`
 --
 ALTER TABLE `turno`
-  MODIFY `id_turno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id_turno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
