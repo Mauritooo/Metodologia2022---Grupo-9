@@ -25,6 +25,10 @@ class TurnosView
     $this->Smarty->display('templates/medicos.tpl');
   }
 
+  function mostrarFormulario() {
+    $this->Smarty->display('templates/cargar_turno.tpl');
+  }
+
 }
 
 ?>

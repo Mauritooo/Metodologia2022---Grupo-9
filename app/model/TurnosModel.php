@@ -37,6 +37,11 @@ class TurnosModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico){
+    $sentencia = $this->db->prepare("INSERT INTO turno(id_usuario, id_autor, fecha, hora, razon_consulta, id_medico) VALUES(?,?,?,?,?,?)");
+    $sentencia->execute(array($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico));
+  }
+
   function DeleteTurno($id){
     $sentencia = $this->db->prepare("delete from turno where id_turno=?");
     $sentencia->execute(array($id));
