@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-05-2022 a las 07:23:39
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.2
+-- Tiempo de generación: 31-05-2022 a las 22:54:05
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,6 +45,33 @@ INSERT INTO `a_cargo` (`id_a_cargo`, `id_secretaria`, `id_medico`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `horario`
+--
+
+CREATE TABLE `horario` (
+  `id_horario` int(11) NOT NULL,
+  `id_medico` int(11) NOT NULL,
+  `hora` varchar(5) NOT NULL,
+  `fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `horario`
+--
+
+INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES
+(1, 7, '8:00', '2022-06-27'),
+(2, 9, '10:00', '2022-05-27'),
+(3, 9, '15:00', '2022-09-30'),
+(4, 7, '2:00', '2022-07-27'),
+(5, 9, '11:00', '2022-05-25'),
+(6, 7, '12:00', '2022-05-02'),
+(7, 9, '1:00', '2022-05-27'),
+(8, 7, '19:00', '2022-05-14');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `turno`
 --
 
@@ -63,12 +90,13 @@ CREATE TABLE `turno` (
 --
 
 INSERT INTO `turno` (`id_turno`, `id_usuario`, `id_autor`, `fecha`, `hora`, `razon_consulta`, `id_medico`) VALUES
-(2, 6, 12, '2022-06-09 23:01:48', '14:00', 'dolor de espalda', 7),
-(4, 6, 10, '2022-05-30 16:57:12', '13:00', 'dolor de rodilla', 8),
-(8, 6, 12, '2022-06-09 23:01:48', '14:00', 'dolor de pecho', 9),
-(55, 6, 12, '2022-06-18 00:00:00', '17:20', 'dolor de hombro', 7),
-(57, 6, 12, '2022-06-24 00:00:00', '18:00', 'dolor de muela', 7),
-(58, 6, 12, '2022-06-25 00:00:00', '20:22', 'cambio de muela', 7);
+(54, 6, 6, '2022-05-27 16:23:05', '10:00', 'Me duele el pie', 7),
+(56, 6, 6, '2022-05-27 00:00:00', '11:00', 'estoy loco', 7),
+(60, 6, 10, '2022-05-13 00:00:00', '12:56', 'asdasd', 9),
+(62, 6, 10, '2022-05-11 00:00:00', '10:29', 'cosa rara', 7),
+(73, 6, 10, '2022-05-11 00:00:00', '10:29', 'cosa rara', 7),
+(74, 6, 10, '2022-05-11 00:00:00', '17:25', 'consulta', 7),
+(75, 6, 10, '2022-05-11 00:00:00', '17:25', 'consulta', 7);
 
 -- --------------------------------------------------------
 
@@ -95,50 +123,22 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`id`, `dni`, `pass`, `rol`, `nombre_apellido`, `especialidad`, `num_afiliado`, `obra_social`, `email`) VALUES
 (6, 42041728, 'prueba123', 'p', 'Nahuel Ruppel', NULL, 1234567891, 'Osecac', 'nahuelruppel10@gmail.com'),
 (7, 34678980, 'prueba123', 'm', 'Prueba Medico', 'Odontologo', NULL, 'Osecac', 'prueba123@gmail.com'),
-(8, 67984545, '', 'm', 'Pruseba Usuario2', NULL, 0, 'Osecac', 'nahuel@gmail.com'),
+(8, 67984545, '', 'p', 'Pruseba Usuario2', NULL, 0, 'Osecac', 'nahuel@gmail.com'),
 (9, 0, '$2y$10$xKIDJTlV0CyEHifAHCnmt.gI3/SwMnjh7SGMtGc0xPnwiHWKRyyC2', 'm', 'medico', NULL, NULL, '', ''),
-(10, 42345678, '$2y$10$tY/X2r3eLNDpDe2ZWMct4ukpbWtah.m12ysnyAxJFDx12HQqJPAa2', 's', 'secretaria', NULL, NULL, '', ''),
+(10, 0, '$2y$10$tY/X2r3eLNDpDe2ZWMct4ukpbWtah.m12ysnyAxJFDx12HQqJPAa2', 's', 'secretaria', NULL, NULL, '', ''),
 (11, 0, '$2y$10$39ueCRYOSTYGFiYol5BitOhqfWDbIp1i2cK0xEdzATQV/0Gl46pc2', 'a', 'admin', NULL, NULL, '', ''),
-(12, 42463568, 'prueb123', 's', 'prueba secretare', NULL, NULL, 'Osde', 'secretaria@hotmail.com');
+(12, 38602821, '', 'p', 'Mauro Valerioti', NULL, 0, 'yaki', 'mauro.valerioti.18@gmail.'),
+(13, 0, '$2y$10$rTK1EermXK3291IfqfOBf.mzZoAZEqQWnn.f9bOwJaeQ6pOx3oFd.', '', '', NULL, NULL, '', '');
 
--------------------------------------------
-
---
--- Estructura de tabla para la tabla `horario`
---
-
-CREATE TABLE `horario` (
-  `id_horario` int(11) NOT NULL,
-  `id_medico` int(11) NOT NULL,
-  `hora` varchar(5) NOT NULL,
-  `fecha` date NOT NULL,
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `horario`
---
-
-INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(1,7, '8:00','2022-06-27');
-INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(2,9, '10:00','2022-05-27');
-INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(3,9, '15:00','2022-09-30');
-INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(4,7, '2:00','2022-07-27');
-INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(5,9, '11:00','2022-05-25');
-INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(6,7, '12:00','2022-05-2');
-INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(7,9, '1:00','2022-05-27');
-INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(8,7, '19:00','2022-05-14');
-
-------------------------------------
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `a_cargo`
+-- Indices de la tabla `horario`
 --
-ALTER TABLE `a_cargo`
-  ADD PRIMARY KEY (`id_a_cargo`),
-  ADD KEY `a_cargo_ibfk_1` (`id_secretaria`),
-  ADD KEY `a_cargo_ibfk_2` (`id_medico`);
+ALTER TABLE `horario`
+  ADD PRIMARY KEY (`id_horario`);
 
 --
 -- Indices de la tabla `turno`
@@ -154,52 +154,26 @@ ALTER TABLE `turno`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
---
--------------------------------------
--- Indices de la tabla `usuario`
---
-ALTER TABLE `horario`
-  ADD PRIMARY KEY (`id_horario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `a_cargo`
---
-ALTER TABLE `a_cargo`
-  MODIFY `id_a_cargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT de la tabla `turno`
 --
 ALTER TABLE `turno`
-  MODIFY `id_turno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id_turno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT de la tabla `horario`
---
-ALTER TABLE `horario`
-  MODIFY `id_horario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `a_cargo`
---
-ALTER TABLE `a_cargo`
-  ADD CONSTRAINT `a_cargo_ibfk_1` FOREIGN KEY (`id_secretaria`) REFERENCES `usuario` (`id`),
-  ADD CONSTRAINT `a_cargo_ibfk_2` FOREIGN KEY (`id_medico`) REFERENCES `usuario` (`id`);
 
 --
 -- Filtros para la tabla `turno`
