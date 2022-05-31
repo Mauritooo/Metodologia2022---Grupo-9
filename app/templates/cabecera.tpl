@@ -35,7 +35,7 @@
         {/if}
       </span>
 
-      {if {$usuario[0].rol} eq "s" || {$usuario[0].rol} eq "p"  || {$usuario[0].rol} eq "a"}
+      {if {$usuario[0].rol} eq "s" || {$usuario[0].rol} eq "p"}
         <div class="barra-busqueda">
         <form method="post" action="GetMedicos">
           <ion-item>
