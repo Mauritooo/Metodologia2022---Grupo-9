@@ -25,7 +25,6 @@ class TurnosView
     $this->Smarty->display('templates/medicos.tpl');
   }
 
-<<<<<<< HEAD
   function mostrarConfirmarTurno() {
     $this->Smarty->display('templates/confirmar_turno.tpl');
   }
@@ -37,12 +36,11 @@ class TurnosView
   function mostrarError(){
     $this->Smarty->display("templates/mensaje_error.tpl");
   }
-=======
+  
   function mostrarFormulario() {
     $this->Smarty->display('templates/cargar_turno.tpl');
   }
 
->>>>>>> b2e228a04db23546fb77a028fce4f1e02a3547ca
 }
 
 ?>

@@ -19,8 +19,9 @@
 
         <ion-header>
             <span class="portada">
-                <ion-title>Ingresa Datos del Paciente: </ion-title>
+                <p>Ingresa Datos del Paciente: </p>
             </span>
+            
         </ion-header> 
 
         <ion-content id="content-container">
@@ -54,7 +55,7 @@
                         </ion-item>
 
 
-                        <ion-button type="submit" class="confirm-button" expand="block">Confirmar</ion-button>
+                        <ion-button type="submit" class="confirm-button" expand="block">Finalizar</ion-button>
                         <a href="/..">regresar</a>
                     </form>
                 </ion-card-content>
