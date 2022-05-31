@@ -70,17 +70,28 @@ class TurnosController
   }
 //--------------------
 function registrarTurnoBySecretaria(){
-  $nombre_apellido = $_POST["name_apellido"];
-  $dni = $_POST["dni"];
-  $direccion = $_POST["direccion"];
-  $telefono = $_POST["telefono"];
-  $email = $_POST["email"];
-  $obraSocial = $_POST["obraSocial"];
-  $nro_afiliado = $_POST["obraSocial"];
+  $this->view->mostrarConfirmarTurno();
+  /*$id_user = $_POST["id_user"];
+  $id_autor = $_POST["id_autor"];
+  $fecha = $_POST["fecha"];
+  $hora = $_POST["hora"];
+  $razon_consulta = $_POST["razon_consulta"];
+  $id_medico = $_POST["id_medico"];
 
-  if($nombre_apellido && $dni && $obraSocial && $nro_afiliado){
-    $this->model->InsertarUsuario($dni,$nombre_apellido,$email,$obraSocial, $nro_afiliado);
-  }
+    $this->model->InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico);*/
+}
+
+function confirmarTurnoSecretaria()
+{
+  $id_user = $_POST["id_user"];
+  $id_autor = $_POST["id_autor"];
+  $fecha = $_POST["fecha"];
+  $hora = $_POST["hora"];
+  $razon_consulta = $_POST["razon_consulta"];
+  $id_medico = $_POST["id_medico"];
+  
+  if($id_user && $id_autor && $id_medico)
+    $this->modelusuarios->InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico);
 }
 
 }

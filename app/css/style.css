@@ -77,3 +77,8 @@ ion-icon {
 .portada_admin{
     margin-left: 5%;
 }
+
+.confirm-button {
+    height: 48px;
+    font-size: 16px;
+}

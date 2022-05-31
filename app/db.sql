@@ -74,6 +74,33 @@ INSERT INTO `usuario` (`id`, `dni`, `pass`, `rol`, `nombre_apellido`, `especiali
 (10, 0, '$2y$10$tY/X2r3eLNDpDe2ZWMct4ukpbWtah.m12ysnyAxJFDx12HQqJPAa2', 's', 'secretaria', NULL, NULL, '', ''),
 (11, 0, '$2y$10$39ueCRYOSTYGFiYol5BitOhqfWDbIp1i2cK0xEdzATQV/0Gl46pc2', 'a', 'admin', NULL, NULL, '', '');
 
+-------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `horario`
+--
+
+CREATE TABLE `horario` (
+  `id_horario` int(11) NOT NULL,
+  `id_medico` int(11) NOT NULL,
+  `hora` varchar(5) NOT NULL,
+  `fecha` date NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `horario`
+--
+
+INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(1,7, '8:00','2022-06-27');
+INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(2,9, '10:00','2022-05-27');
+INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(3,9, '15:00','2022-09-30');
+INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(4,7, '2:00','2022-07-27');
+INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(5,9, '11:00','2022-05-25');
+INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(6,7, '12:00','2022-05-2');
+INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(7,9, '1:00','2022-05-27');
+INSERT INTO `horario` (`id_horario`, `id_medico`, `hora`, `fecha`) VALUES(8,7, '19:00','2022-05-14');
+
+------------------------------------
 --
 -- Índices para tablas volcadas
 --
@@ -92,6 +119,12 @@ ALTER TABLE `turno`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
+--
+-------------------------------------
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `horario`
+  ADD PRIMARY KEY (`id_horario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -108,6 +141,13 @@ ALTER TABLE `turno`
 --
 ALTER TABLE `usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `horario`
+--
+ALTER TABLE `horario`
+  MODIFY `id_horario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 
 --
 -- Restricciones para tablas volcadas

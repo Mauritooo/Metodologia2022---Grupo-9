@@ -23,6 +23,10 @@ class TurnosView
     $this->Smarty->display('templates/medicos.tpl');
   }
 
+  function mostrarConfirmarTurno() {//TERMINAR DE IMPLEMENTAR
+    $smarty = new Smarty();
+    $smarty->display('templates/confirmar_turno.tpl');
+  }
 }
 
 ?>
