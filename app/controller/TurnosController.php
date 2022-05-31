@@ -81,8 +81,7 @@ function registrarTurnoBySecretaria(){
     $this->model->InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico);*/
 }
 
-function confirmarTurnoSecretaria()
-{
+function confirmarTurnoSecretaria(){
   $id_user = $_POST["id_user"];
   $id_autor = $_POST["id_autor"];
   $fecha = $_POST["fecha"];
@@ -90,8 +89,12 @@ function confirmarTurnoSecretaria()
   $razon_consulta = $_POST["razon_consulta"];
   $id_medico = $_POST["id_medico"];
   
-  if($id_user && $id_autor && $id_medico)
+  if($id_user && $id_autor && $id_medico){
     $this->modelusuarios->InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico);
+    $this->view->mostrarMensajeConfirmacion();
+  }else{
+    $this->view->mostrarError();
+  }
 }
 
 }
