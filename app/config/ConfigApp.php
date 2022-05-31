@@ -27,9 +27,16 @@ class ConfigApp
       'registrar'=> 'LoginController#Registrar',
       'registrarusuario' => 'LoginController#registrarUsuario',
       'registrarUserByAdmin' => 'LoginController#registrarUsuarioByAdmin',
+<<<<<<< HEAD
       'registrarTurnoBySecretary' => 'TurnosController#registrarTurnoBySecretaria',
       'confirmarTurno' => 'TurnosController#confirmarTurnoSecretaria',
       'GetMedicos' => 'TurnosController#GetMedicos'
+=======
+      'GetMedicos' => 'TurnosController#GetMedicos',
+      'getformpaciente' => 'TurnosController#GetFormPaciente',
+      'agendarturnopaciente' => 'TurnosController#AgendarTurnoPaciente',
+      'borrarturno' => 'TurnosController#BorrarTurno'
+>>>>>>> b2e228a04db23546fb77a028fce4f1e02a3547ca
     ];
 
 }
