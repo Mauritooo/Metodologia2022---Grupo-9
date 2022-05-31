@@ -49,7 +49,18 @@ class UsuarioModel
     $sentencia->execute(array($id_medico));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
-  
+
+  function GetTurnosUsuario($id_usuario){
+    $sentencia = $this->db->prepare("select * from turno where id_usuario=?");
+    $sentencia->execute(array($id_usuario));
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function ListarTurnosMedicos($id_medico){
+    $sentencia = $this->db->prepare("select * from turno where id_medico=? and fecha >= now()");
+    $sentencia->execute(array($id_medico));
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
 
 }
 
