@@ -50,9 +50,7 @@
 
       </div>
       {/if}
-
       
-        
     </ion-header>
 
     

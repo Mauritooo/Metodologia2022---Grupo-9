@@ -30,6 +30,10 @@
                 <ion-card-content>
                     <form method="post" action="confirmarTurno">
                         <ion-item>
+                            <ion-label>id medico: </ion-label>
+                            <ion-input type="number" name="id_medico" placeholder="id_medico..."></ion-input>
+                        </ion-item>
+                        <ion-item>
                             <ion-label>id usuario: </ion-label>
                             <ion-input type="text" name="id_user" placeholder="id usuario..."></ion-input>
                         </ion-item>
@@ -49,12 +53,10 @@
                             <ion-label>razon consulta: </ion-label>
                             <ion-input type="text" name="razon_consulta" placeholder="razon de la consulta..."></ion-input>
                         </ion-item>
-                        <ion-item>
-                            <ion-label>id medico: </ion-label>
-                            <ion-input type="number" name="id_medico" placeholder="id_medico..."></ion-input>
-                        </ion-item>
+
 
                         <ion-button type="submit" class="confirm-button" expand="block">Finalizar</ion-button>
+                        <a href="/..">regresar</a>
                     </form>
                 </ion-card-content>
             </ion-card>
@@ -62,5 +64,6 @@
         </ion-content>
 
     </ion-app>
+    
 
 {include file="footer.tpl"}
