@@ -1,16 +1,19 @@
 <?php
 require_once  "./view/TurnosView.php";
 require_once  "./model/UsuarioModel.php";
+require_once  "./model/TurnosModel.php";
 
 class TurnosController
 {
   private $view;
   private $modelusuarios;
+  private $modelturnos;
 
   function __construct()
   {
     $this->view = new TurnosView();
     $this->modelusuarios = new UsuarioModel();
+    $this->modelturnos = new TurnosModel();
   }
 
   function Home(){
@@ -28,16 +31,21 @@ class TurnosController
       if ($usuario[0] == NULL) {
         HEADER(REGISTER);
       } else {
-        $turnosP = $this->modelusuarios->GetTurnosUsuario($usuario[0]['id']);
+        $turnosP = $this->modelturnos->GetTurnosUsuario($usuario[0]['id']);
         foreach ($turnosP as $clave => $turno) {
           $medico = $this->modelusuarios->GetMedicoId($turno['id_medico']);
           $turnosP[$clave]['nombre_medico'] = $medico[0]['nombre_apellido'];
         }
-        $turnosM = $this->modelusuarios->ListarTurnosMedicos($usuario[0]['id']);
+        $turnosM = $this->modelturnos->ListarTurnosMedicos($usuario[0]['id']);
         #echo($turnos[0]['fecha']);
         #$turnos = null;
-        $medicos_S = $this->modelusuarios->ListarMedicosAcargo($usuario[0]['id']);
-        $this->view->Mostrar($usuario,$turnosP,$turnosM,$medicos_S);
+        $turnos_S = $this->modelturnos->ListarTurnosSecretaria($usuario[0]['id']);
+        foreach ($turnos_S as $key => $turno) {
+          $medico = $this->modelusuarios->GetMedicoId($turno['id_medico']);
+          $turnos_S[$key]['nombre_medico'] = $medico[0]['nombre_apellido'];
+        }
+        $medicos_S = $this->modelturnos->ListarMedicosAcargo($usuario[0]['id']);
+        $this->view->Mostrar($usuario,$turnosP,$turnosM,$turnos_S,$medicos_S);
       }
     }else{
       HEADER(LOGIN);
@@ -67,6 +75,12 @@ class TurnosController
     }else{
       HEADER(LOGIN);
     }
+    
+  }
+
+  function BorrarTurno($param){
+    $this->modelturnos->DeleteTurno($param[0]);
+    HEADER(INICIO);
     
   }
 

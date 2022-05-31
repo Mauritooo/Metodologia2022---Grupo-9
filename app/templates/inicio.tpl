@@ -8,6 +8,7 @@
 {/if}
 {if {$usuario[0].rol} eq "s"}
     {include file="medicos_a_cargo.tpl" medicos_S=$medicos_S}
+    {include file="turnos_secretaria.tpl" turnos_S=$turnos_S}
 {/if}
 {if {$usuario[0].rol} eq "a"}
     {include file="cargar_usuario.tpl"}

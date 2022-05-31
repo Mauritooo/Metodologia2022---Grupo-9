@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-05-2022 a las 22:27:18
+-- Tiempo de generación: 31-05-2022 a las 05:59:08
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -63,10 +63,9 @@ CREATE TABLE `turno` (
 --
 
 INSERT INTO `turno` (`id_turno`, `id_usuario`, `id_autor`, `fecha`, `hora`, `razon_consulta`, `id_medico`) VALUES
-(2, 6, 6, '2022-05-30 05:57:30', '11:00', 'dolor de cabeza', 7),
-(3, 6, 6, '2022-05-30 05:59:44', '12:00', 'dolor de barriga', 7),
-(4, 6, 6, '2022-05-30 16:57:12', '13:00', 'dolor de rodilla', 8),
-(54, 6, 6, '2022-05-27 16:23:05', '10:00', 'Me duele el pie', 7);
+(2, 6, 12, '2022-06-09 23:01:48', '14:00', 'dolor de espalda', 7),
+(4, 6, 10, '2022-05-30 16:57:12', '13:00', 'dolor de rodilla', 8),
+(8, 6, 12, '2022-06-09 23:01:48', '14:00', 'dolor de pecho', 9);
 
 -- --------------------------------------------------------
 
