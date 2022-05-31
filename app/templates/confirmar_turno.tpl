@@ -34,8 +34,8 @@
                             <ion-input type="number" name="id_medico" placeholder="id_medico..."></ion-input>
                         </ion-item>
                         <ion-item>
-                            <ion-label>id usuario: </ion-label>
-                            <ion-input type="text" name="id_user" placeholder="id usuario..."></ion-input>
+                            <ion-label>id paciente: </ion-label>
+                            <ion-input type="text" name="id_user" placeholder="id paciente..."></ion-input>
                         </ion-item>
                         <ion-item>
                             <ion-label>id_autor: </ion-label>
