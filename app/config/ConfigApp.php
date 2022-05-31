@@ -27,7 +27,8 @@ class ConfigApp
       'registrar'=> 'LoginController#Registrar',
       'registrarusuario' => 'LoginController#registrarUsuario',
       'registrarUserByAdmin' => 'LoginController#registrarUsuarioByAdmin',
-      'GetMedicos' => 'TurnosController#GetMedicos'
+      'GetMedicos' => 'TurnosController#GetMedicos',
+      'borrarturno' => 'TurnosController#BorrarTurno'
     ];
 
 }
