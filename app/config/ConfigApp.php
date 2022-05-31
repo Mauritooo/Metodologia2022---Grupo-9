@@ -29,7 +29,10 @@ class ConfigApp
       'registrarUserByAdmin' => 'LoginController#registrarUsuarioByAdmin',
       'registrarTurnoBySecretary' => 'TurnosController#registrarTurnoBySecretaria',
       'confirmarTurno' => 'TurnosController#confirmarTurnoSecretaria',
-      'GetMedicos' => 'TurnosController#GetMedicos'
+      'GetMedicos' => 'TurnosController#GetMedicos',
+      'getformpaciente' => 'TurnosController#GetFormPaciente',
+      'agendarturnopaciente' => 'TurnosController#AgendarTurnoPaciente',
+      'borrarturno' => 'TurnosController#BorrarTurno'
     ];
 
 }

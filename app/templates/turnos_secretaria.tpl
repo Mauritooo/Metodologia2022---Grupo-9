@@ -1,9 +1,7 @@
-{include file="cabecera.tpl" usuario=$usuario}
-<ion-content id="content-container">
 <br>
-<ion-card-title>Medicos</ion-card-title>
+<ion-card-title>Mis Turnos</ion-card-title>
 
-{foreach from=$medicos item=medico}
+{foreach from=$turnos_S item=turno}
     <ion-card>
         <ion-card-header class="header-card-turno">
             <span class="avatar-medico">
@@ -13,18 +11,17 @@
             </span>
 
             <span class="info-turno">
-                <ion-card-title>{$medico['nombre_apellido']}</ion-card-title>
-                <ion-card-subtitle>{$medico['especialidad']}</ion-card-subtitle>
+                <ion-card-title>{$turno['nombre_medico']}</ion-card-title>
+                <ion-card-subtitle>{$turno['razon_consulta']}</ion-card-subtitle>
             </span>
 
         </ion-card-header>
         <ion-card-content class="bottom-card-turno">
-            <h5>Obra Social: {$medico['obra_social']}</h5>
-            <h4><a href="getformpaciente"><ion-button>
-                Agendar Turno
+            <h5>Fecha: {$turno['fecha']}</h5>
+            <h5>Hora: {$turno['hora']}</h5>
+        <h4><a href="borrarturno/{$turno['id_turno']}"><ion-button color="danger">
+                Borrar Turno
         </ion-button></a></h4>
         </ion-card-content>
     </ion-card>
-{/foreach}    
-{include file="footer.tpl"}
-
+{/foreach}
