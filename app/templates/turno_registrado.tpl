@@ -44,18 +44,17 @@
 
         </ion-card-header>
         
-        <ion-card-content class="bottom-card-turno">
+        <ion-card-content class="bottom-card-turno-registrado">
             
             <h3>El turno fue registrado.
             La consulta se llevara a cabo
-            en <b>Nombre Institución</b> el
+            en <b>Nombre InstituciÃ³n</b> el
             <b>{$fecha}</b> a
             las <b>{$hora}</b> <h3>
             <br>
             <h5>Detalles enviados a {$email}<h5>
 
-            <ion-button style="float: right; padding-top: 6px;" type="submit">Agendar</ion-button>
-            
+            <a href=""><ion-button style="float: right; padding-top: 6px;" type="submit">Continuar</ion-button></a>
         </ion-card-content>
         
     </ion-card>

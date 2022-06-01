@@ -10,8 +10,8 @@
             </span>
 
             <span class="info-turno">
-                <ion-card-title>{$usuario[0]['nombre_apellido']}</ion-card-title>
-                <ion-card-subtitle>{$turno['razon_consulta']}</ion-card-subtitle>
+                <ion-card-title style="font-size: 16px">{$usuario[0]['nombre_apellido']}</ion-card-title>
+                <ion-card-subtitle style="font-size: 14px">{$turno['razon_consulta']}</ion-card-subtitle>
             </span>
 
         </ion-card-header>

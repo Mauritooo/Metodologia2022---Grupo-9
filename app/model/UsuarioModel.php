@@ -10,7 +10,7 @@ class UsuarioModel
   }
 
   function Connect(){
-    return new PDO('mysql:host='.HOST.'; dbname='.DBNOMBRE.';charset=utf8', USER, PASS);
+    return new PDO('mysql:host='.HOST.'; dbname='.DBNOMBRE.';charset=utf8', USER, PASS, array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
   }
 
   function GetUser($dni){
@@ -26,14 +26,14 @@ class UsuarioModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  function InsertarUsuario($dni,$nombre_apellido,$email,$obraSocial, $nro_afiliado){
-    $sentencia = $this->db->prepare("INSERT INTO usuario(dni, rol, nombre_apellido, num_afiliado, obra_social, email) VALUES(?,?,?,?,?,?)");
-    $sentencia->execute(array($dni, 'p', $nombre_apellido, $nro_afiliado, $obraSocial, $email));
+  function InsertarUsuario($dni, $nombre_apellido, $num_afiliado, $obra_social, $email){
+    $sentencia = $this->db->prepare("INSERT INTO usuario(dni, pass, rol, nombre_apellido, num_afiliado, obra_social, email) VALUES(?,?,?,?,?,?,?)");
+    $sentencia->execute(array($dni, '', 'p', $nombre_apellido, $num_afiliado, $obra_social, $email));
   }
 
   function InsertarUsuarioByAdmin($nombre_apellido,$password,$tipo,$especialidad=NULL,$obra_social=''){
     $sentencia = $this->db->prepare("INSERT INTO usuario(dni, pass, rol, nombre_apellido, especialidad, num_afiliado, obra_social, email) VALUES(?,?,?,?,?,?,?,?)");
-    $sentencia->execute(array(0, $password, $tipo, $nombre_apellido, $especialidad, NULL, $obra_social, ''));
+    $sentencia->execute(0, $password, $tipo, $nombre_apellido, $especialidad, NULL, $obra_social, '');
   }
 //INSERTAR TURNO POR SECRETARIA.
   function InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico){

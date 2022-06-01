@@ -81,14 +81,13 @@ class LoginController
     $telefono = $_POST["telefono"];
     $email = $_POST["email"];
     $obraSocial = $_POST["obraSocial"];
-    $nro_afiliado = $_POST["obraSocial"];
-
+    $nro_afiliado = $_POST["nro_afiliado"];
+    
     if($nombre_apellido && $dni && $obraSocial && $nro_afiliado){
-      $this->model->InsertarUsuario($dni,$nombre_apellido,$email,$obraSocial, $nro_afiliado);
+      $this->model->InsertarUsuario($dni, $nombre_apellido, $nro_afiliado, $obraSocial, $email);
       $this->verificarLogin();
     }
   }
-
   function registrarUsuarioByAdmin(){
     $user = $_POST["user"];
     $password = $_POST["password"];

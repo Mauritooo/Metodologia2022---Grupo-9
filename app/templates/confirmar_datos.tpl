@@ -57,7 +57,7 @@
                 </ion-item>
                 <ion-item>
                     <ion-label>Dirección: </ion-label>
-                    <ion-input type="text" name="direcicon"></ion-input>
+                    <ion-input type="text" name="direccion"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label>Teléfono: </ion-label>
@@ -77,11 +77,11 @@
                 </ion-item>
                 
                 <ion-item style="display: none">
-                    <ion-input type="text" name="id_medico" value="{$id_medico}"></ion-input>
-                    <ion-input type="text" name="fecha" value="{$fecha}"></ion-input>
-                    <ion-input type="text" name="hora" value="{$hora}"></ion-input>
+                    <ion-input type="number" name="id_medico" value="{$id_medico}"></ion-input>
+                    <ion-input type="date" name="fecha" value="{$fecha}"></ion-input>
+                    <ion-input type="time" name="hora" value="{$hora}"></ion-input>
                     <ion-input type="text" name="razon_consulta" value="{$razon_consulta}"></ion-input>
-                    <ion-input type="text" name="id_autor" value="{$id_autor}"></ion-input>
+                    <ion-input type="number" name="id_autor" value="{$id_autor}"></ion-input>
                 </ion-item>
 
                 <ion-button style="float: right; padding-top: 6px;" type="submit">Confirmar</ion-button>

@@ -157,12 +157,13 @@ function confirmarTurnoSecretaria()
     $usuario = $this->modelusuarios->getUser($dni_paciente);
 
     //antes de insertar el turno compruebo que exista el paciente, si no existe lo creo
-    if ($usuario[0] == NULL) {
-      $this->modelusuarios->InsertarUsuario($dni_paciente,$nombre_apellido,$email,$obra_social, $num_afiliado);
+    if ($usuario == NULL) {
+      $this->modelusuarios->InsertarUsuario($dni_paciente,$nombre_apellido,$num_afiliado,$obra_social, $email);
     }
 
     $usuario = $this->modelusuarios->getUser($dni_paciente);
-    $id_user = $usuario[0]['dni'];
+    $id_user = $usuario[0]['id'];
+
 
     $this->modelusuarios->InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico);
 

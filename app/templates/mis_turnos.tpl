@@ -1,5 +1,5 @@
 <br>
-<ion-card-title>Mis Turnos</ion-card-title>
+<ion-card-title style="font-size:24px">Médicos a mi cargo</ion-card-title>
 
 {foreach from=$turnosP item=turno}
     <ion-card>
@@ -11,8 +11,8 @@
             </span>
 
             <span class="info-turno">
-                <ion-card-title>{$turno['nombre_medico']}</ion-card-title>
-                <ion-card-subtitle>{$turno['razon_consulta']}</ion-card-subtitle>
+                <ion-card-title style="font-size: 16px">{$turno['nombre_medico']}</ion-card-title>
+                <ion-card-subtitle style="font-size: 14px">{$turno['razon_consulta']}</ion-card-subtitle>
             </span>
 
         </ion-card-header>

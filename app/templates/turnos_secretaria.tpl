@@ -1,5 +1,5 @@
 <br>
-<ion-card-title>Mis Turnos</ion-card-title>
+<ion-card-title style="font-size:24px">Mis Turnos</ion-card-title>
 
 {foreach from=$turnos_S item=turno}
     <ion-card>

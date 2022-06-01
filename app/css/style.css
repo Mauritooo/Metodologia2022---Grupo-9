@@ -118,6 +118,12 @@ ion-icon {
     border-top: 1px solid #00000024;
 }
 
+.bottom-card-turno-registrado {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #00000024;
+}
+
 .check-icon {
     width: 56px;
     height: 56px;
