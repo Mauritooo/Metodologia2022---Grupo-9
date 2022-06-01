@@ -128,7 +128,9 @@ function confirmarTurnoSecretaria()
     $razon_consulta = $_POST["razon_consulta"];
     session_start();
 
-    if(is_numeric($_SESSION["User"])) {
+    //chequea si es una secretaria o paciente intentando registrar turno, el camino va a ser diferente dependiendo de quien sea
+    if(!is_numeric($_SESSION["User"])) {
+      //si es secretaria hay que confirmar los datos
       $nombre_usuario = $_SESSION["User"];
       $usuario_autor = $this->modelusuarios->getUserStaff($nombre_usuario);
   
@@ -136,10 +138,11 @@ function confirmarTurnoSecretaria()
   
       $this->view->mostrarConfirmarDatos($id_medico, $fecha, $hora, $razon_consulta, $id_autor);
     } else {
-      //a terminar, hacer que si es paciente se guarde directo el turno
-      // $this->modelusuarios->InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico);
+      //si es paciente registra directamente
+      $usuario = $this->modelusuarios->getUser($_SESSION["User"]);
+      $this->modelusuarios->InsertarTurno($usuario[0]['id'], $usuario[0]['id'], $fecha, $hora, $razon_consulta, $id_medico);
 
-      // $this->view->mostrarTurnoRegistrado($fecha, $hora, $email);
+      $this->view->mostrarTurnoRegistrado($fecha, $hora);
     }
 
     // if(!empty($id_autor) && !empty($id_medico)){

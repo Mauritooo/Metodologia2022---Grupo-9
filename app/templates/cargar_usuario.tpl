@@ -23,7 +23,7 @@
             </ion-item>
             <ion-item>
                 <ion-label>Tipo de usuario: </ion-label>
-                <select id="select_tipo" name="tipo">
+                <select id="select_tipo" name="tipo" style="border: none;">
                     <option value="m">Medico</option>
                     <option value="s" selected="selected">Secretaria</option>
                 </select>

@@ -52,8 +52,9 @@
             <b>{$fecha}</b> a
             las <b>{$hora}</b> <h3>
             <br>
-            <h5>Detalles enviados a {$email}<h5>
-
+            {if $email != ''}
+                <h5>Detalles enviados a {$email}<h5>
+            {/if}
             <a href=""><ion-button style="float: right; padding-top: 6px;" type="submit">Continuar</ion-button></a>
         </ion-card-content>
         

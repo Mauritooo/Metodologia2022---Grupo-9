@@ -56,7 +56,7 @@ class TurnosView
     $this->Smarty->display('templates/confirmar_datos.tpl');
   }
 
-  function mostrarTurnoRegistrado($fecha, $hora, $email) {
+  function mostrarTurnoRegistrado($fecha, $hora, $email = '') {
     $this->Smarty->assign('fecha',$fecha);
     $this->Smarty->assign('hora',$hora);
     $this->Smarty->assign('email',$email);

@@ -78,7 +78,9 @@
                 <ion-card-content style="flex-direction: column;" class="bottom-card-turno">
                     <h5>Obra Social: {$medico['obra_social']}</h5>
                     <div class="buttons_medicos">
-                    <h4> <ion-button color="tertiary">Cargar disponibilidad</ion-button></h4>
+                    {if $usuario[0]['rol'] eq "s"} 
+                        <h4> <ion-button color="tertiary">Cargar disponibilidad</ion-button></h4>
+                    {/if}
                         <form method="post" action="agendarturnocon">
                             <ion-item style="display: none">
                                 <ion-input type="text" name="id_medico" value="{$medico['id']}"></ion-input>
