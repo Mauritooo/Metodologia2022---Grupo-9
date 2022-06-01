@@ -2,6 +2,14 @@ html {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
 body {
     background-color: E5E5E5;
 }
@@ -11,7 +19,11 @@ h2 {
 }
 
 ion-content {
-    --ion-background-color:#E5E5E5;
+    --ion-background-color: none;
+}
+
+.ion-page {
+    font-family: 'Source Sans 3';
 }
 
 ion-card-content {
@@ -34,6 +46,10 @@ ion-card {
 ion-icon {
     color: #3880FF;
     font-size: 28px;
+}
+
+.card-content-md form {
+    background-color: #FFFFFF;
 }
 
 .sc-ion-searchbar-md-h {
@@ -82,9 +98,33 @@ ion-icon {
     height: 48px;
     font-size: 16px;
 }
+
 .buttons_medicos{
     display: flex;
 }
+
 .buttons_medicos *{
     font-size: 11px;
+}
+
+.avatar-medico {
+    width: 39px;
+    height: 39px;
+}
+
+.bottom-card-turno {
+    display: flex;
+    flex-direction: row-reverse;
+    border-top: 1px solid #00000024;
+}
+
+.bottom-card-turno-registrado {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #00000024;
+}
+
+.check-icon {
+    width: 56px;
+    height: 56px;
 }

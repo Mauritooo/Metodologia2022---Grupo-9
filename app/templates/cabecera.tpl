@@ -9,12 +9,13 @@
     <title>Ionic</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+3' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body style="background-color: #E5E5E5;">
   <ion-app id="app-container">
-    <ion-header>
+    <ion-header class="ion-no-border">
       <ion-avatar>
         <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
       </ion-avatar>
@@ -22,17 +23,20 @@
       <br>
       <span class="mensaje-bienvenida">
         <h3>Hola,</h3>
-        <h2><b>{{$usuario[0].nombre_apellido}}! <ion-icon name="hand-left" color="yellow"></ion-icon></b></h2>
+        <h2><b>{{$usuario[0].nombre_apellido}}! <img src="img/hand-left-sharp.svg"></b></h2>
         {if {$usuario[0].rol} eq "p"}
-          <h3>¿Queres sacar un turno? <ion-icon name="arrow-down-sharp"></ion-icon></h3>
+          <h3>¿Queres sacar un turno? <img style="margin-bottom: -5px" src="img/hand-pointing-down.svg"></h3>
         {elseif {$usuario[0].rol} eq "m"}
-          <h3>¡Tus pacientes estan esperando! <ion-icon name="arrow-down-sharp"></ion-icon></h3>
+          <h3>¿Listo para trabajar?</h3>
+          <h5>¡Tus pacientes estan esperando! <img style="margin-bottom: -5px" src="img/hand-pointing-down.svg"></h5>
         {elseif {$usuario[0].rol} eq "s"}
-          <h3>Carga disponibilidad para tus médicos <ion-icon name="arrow-down-sharp"></ion-icon></h3>
+          <h3>¿Listo para trabajar?</h3>
+          <h5>Carga disponibilidad para tus médicos <img style="margin-bottom: -5px" src="img/hand-pointing-down.svg"></h5>
         {elseif {$usuario[0].rol} eq "a"}
-          <h2>Eres Administrador <ion-icon name="warning"></ion-icon></h2>
-          <h3>Crea cuentas para el personal <ion-icon name="arrow-down-sharp"></ion-icon></h3>
+          <h2>Eres Administrador <img src="img/warning-sharp.svg"></h2>
+          <h5>Crea cuentas para el personal <img style="margin-bottom: -5px" src="img/hand-pointing-down.svg"></h5>
         {/if}
+        <!-- <ion-datetime readonly presentation="date"></ion-datetime> -->
       </span>
 
       {if {$usuario[0].rol} eq "s" || {$usuario[0].rol} eq "p"}

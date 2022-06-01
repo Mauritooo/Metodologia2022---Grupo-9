@@ -81,14 +81,13 @@ class LoginController
     $telefono = $_POST["telefono"];
     $email = $_POST["email"];
     $obraSocial = $_POST["obraSocial"];
-    $nro_afiliado = $_POST["obraSocial"];
-
+    $nro_afiliado = $_POST["nro_afiliado"];
+    
     if($nombre_apellido && $dni && $obraSocial && $nro_afiliado){
-      $this->model->InsertarUsuario($dni,$nombre_apellido,$email,$obraSocial, $nro_afiliado);
+      $this->model->InsertarUsuario($dni, $nombre_apellido, $nro_afiliado, $obraSocial, $email);
       $this->verificarLogin();
     }
   }
-
   function registrarUsuarioByAdmin(){
     $user = $_POST["user"];
     $password = $_POST["password"];
@@ -96,7 +95,15 @@ class LoginController
     $tipo = $_POST["tipo"];
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $this->model->InsertarUsuarioByAdmin($user,$hash,$tipo);
+    if ($tipo == 'm') {
+      $especialidad = $_POST["especialidad"];
+      $obra_social = $_POST["obra_social"];
+
+      $this->model->InsertarUsuarioByAdmin($user,$hash,$tipo,$especialidad,$obra_social);
+    } else {
+      $this->model->InsertarUsuarioByAdmin($user,$hash,$tipo);
+    }
+
     HEADER(INICIO);
   }
 

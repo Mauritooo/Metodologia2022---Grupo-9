@@ -40,9 +40,29 @@ class TurnosView
     $this->Smarty->display("templates/mensaje_error.tpl");
   }
   
-  function mostrarFormulario() {
-    $this->Smarty->display('templates/cargar_turno.tpl');
+  function mostrarAgendarTurnoCon($id_medico, $nombre_apellido, $especialidad) {
+    $this->Smarty->assign('id_medico',$id_medico);
+    $this->Smarty->assign('nombre_apellido',$nombre_apellido);
+    $this->Smarty->assign('especialidad',$especialidad);
+    $this->Smarty->display('templates/agendar_turno_con.tpl');
   }
+
+  function mostrarConfirmarDatos($id_medico, $fecha, $hora, $razon_consulta, $id_autor) {
+    $this->Smarty->assign('id_medico',$id_medico);
+    $this->Smarty->assign('fecha',$fecha);
+    $this->Smarty->assign('hora',$hora);
+    $this->Smarty->assign('razon_consulta',$razon_consulta);
+    $this->Smarty->assign('id_autor',$id_autor);
+    $this->Smarty->display('templates/confirmar_datos.tpl');
+  }
+
+  function mostrarTurnoRegistrado($fecha, $hora, $email = '') {
+    $this->Smarty->assign('fecha',$fecha);
+    $this->Smarty->assign('hora',$hora);
+    $this->Smarty->assign('email',$email);
+    $this->Smarty->display('templates/turno_registrado.tpl');
+  }
+
 }
 
 ?>

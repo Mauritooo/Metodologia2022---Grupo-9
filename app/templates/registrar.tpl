@@ -60,7 +60,7 @@
                         </ion-item>
                         <ion-item>
                             <ion-label>Numero de afiliado: </ion-label>
-                            <ion-input type="text" name="nro_afiliado" placeholder="12345567788"></ion-input>
+                            <ion-input type="number" name="nro_afiliado" placeholder="12345567788"></ion-input>
                         </ion-item>
 
                         <a href="/tpe/login">¿Ya tienes una cuenta? Ingresa aqui.</a>
