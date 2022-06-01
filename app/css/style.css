@@ -98,13 +98,11 @@ ion-icon {
     height: 48px;
     font-size: 16px;
 }
-<<<<<<< HEAD
+
 .buttons_medicos{
     display: flex;
 }
+
 .buttons_medicos *{
     font-size: 11px;
 }
-=======
-
->>>>>>> #MET-65 estilos a inicio admin
