@@ -19,7 +19,7 @@
             </ion-item>
             <ion-item id="campo_obra_social" style="display: none;">
                 <ion-label>Obra Social: </ion-label>
-                <ion-input type="text" name="obra social" placeholder="Osecac"></ion-input>
+                <ion-input type="text" name="obra_social" placeholder="Osecac"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label>Tipo de usuario: </ion-label>

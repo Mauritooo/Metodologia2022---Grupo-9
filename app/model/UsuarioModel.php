@@ -31,9 +31,9 @@ class UsuarioModel
     $sentencia->execute(array($dni, 'p', $nombre_apellido, $nro_afiliado, $obraSocial, $email));
   }
 
-  function InsertarUsuarioByAdmin($nombre_apellido,$password,$tipo){
-    $sentencia = $this->db->prepare("INSERT INTO usuario(pass,rol, nombre_apellido) VALUES(?,?,?)");
-    $sentencia->execute(array($password, $tipo, $nombre_apellido));
+  function InsertarUsuarioByAdmin($nombre_apellido,$password,$tipo,$especialidad=NULL,$obra_social=''){
+    $sentencia = $this->db->prepare("INSERT INTO usuario(dni, pass, rol, nombre_apellido, especialidad, num_afiliado, obra_social, email) VALUES(?,?,?,?,?,?,?,?)");
+    $sentencia->execute(array(0, $password, $tipo, $nombre_apellido, $especialidad, NULL, $obra_social, ''));
   }
 //INSERTAR TURNO POR SECRETARIA.
   function InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico){

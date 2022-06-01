@@ -96,7 +96,15 @@ class LoginController
     $tipo = $_POST["tipo"];
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $this->model->InsertarUsuarioByAdmin($user,$hash,$tipo);
+    if ($tipo == 'm') {
+      $especialidad = $_POST["especialidad"];
+      $obra_social = $_POST["obra_social"];
+
+      $this->model->InsertarUsuarioByAdmin($user,$hash,$tipo,$especialidad,$obra_social);
+    } else {
+      $this->model->InsertarUsuarioByAdmin($user,$hash,$tipo);
+    }
+
     HEADER(INICIO);
   }
 
