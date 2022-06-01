@@ -106,3 +106,13 @@ ion-icon {
 .buttons_medicos *{
     font-size: 11px;
 }
+
+.avatar-medico {
+    width: 39px;
+    height: 39px;
+}
+
+.bottom-card-turno {
+    display: flex;
+    flex-direction: row-reverse;
+}
