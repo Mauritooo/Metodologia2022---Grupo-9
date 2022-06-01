@@ -2,6 +2,14 @@ html {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
 body {
     background-color: E5E5E5;
 }
@@ -12,6 +20,10 @@ h2 {
 
 ion-content {
     --ion-background-color:#E5E5E5;
+}
+
+.ion-page {
+    font-family: 'Source Sans 3';
 }
 
 ion-card-content {
