@@ -41,11 +41,11 @@ class UsuarioModel
     $sentencia->execute(array($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico));
   }
 
-  function GetMedicos($bus){
-    $sentencia = $this->db->prepare("select * from usuario where rol=? and (obra_social like concat('%',?,'%') or especialidad like concat('%',?,'%'))");
+  function GetMedicos($bus,$os,$esp){
+    $sentencia = $this->db->prepare("select * from usuario where rol=? and nombre_apellido like concat('%',?,'%') and especialidad like concat('%',?,'%') and obra_social like concat('%',?,'%') ");
     #$sentencia = $this->db->prepare("select * from usuario where rol='m'" );
     #$sentencia->execute(); 
-    $sentencia->execute(array('m',$bus,$bus));
+    $sentencia->execute(array('m',$bus,$esp,$os));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
@@ -67,6 +67,20 @@ class UsuarioModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function GetEspecialidades(){
+    $sentencia = $this->db->prepare("select distinct especialidad as esp from usuario");
+    $sentencia->execute();
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function GetObraSociales(){
+    $sentencia = $this->db->prepare("select distinct obra_social as os from usuario");
+    $sentencia->execute();
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+
+  
 }
 
 ?>

@@ -68,13 +68,23 @@ class TurnosController
         HEADER(REGISTER);
       } else {
         $bus = $_POST["nombre"];
-        $medicos = $this->modelusuarios->GetMedicos($bus);
-        
-        $this->view->MostrarMedicos($medicos,$usuario);
+        $os = "";
+        $esp = "";
+        if (isset($_POST['os'])){
+          $os = $_POST['os'];
+        }
+        if (isset($_POST['esp'])){
+          $esp = $_POST['esp'];
+        }
+        $medicos = $this->modelusuarios->GetMedicos($bus,$os,$esp);
+        $especialidades = $this->modelusuarios->GetEspecialidades();
+        $obra_sociales = $this->modelusuarios->GetObraSociales();
+        $this->view->MostrarMedicos($medicos,$usuario,$especialidades,$obra_sociales,$bus);
       }
     }else{
       HEADER(LOGIN);
     }
+
     
   }
 //--------------------

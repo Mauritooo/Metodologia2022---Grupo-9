@@ -39,7 +39,7 @@
         <div class="barra-busqueda">
         <form method="post" action="GetMedicos">
           <ion-item>
-            <ion-label>Obra social o especialidad:</ion-label>
+            <ion-label>Nombre del médico:</ion-label>
             <ion-input type="text" name="nombre"></ion-input>
           </ion-item>
 

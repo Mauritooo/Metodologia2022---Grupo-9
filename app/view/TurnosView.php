@@ -19,9 +19,12 @@ class TurnosView
     $this->Smarty->display('templates/inicio.tpl');
   }
 
-  function MostrarMedicos($medicos,$usuario){
+  function MostrarMedicos($medicos,$usuario,$especialidades,$obra_sociales,$bus ){
     $this->Smarty->assign('usuario',$usuario);
     $this->Smarty->assign('medicos',$medicos);
+    $this->Smarty->assign('especialidades',$especialidades);
+    $this->Smarty->assign('obra_sociales',$obra_sociales);
+    $this->Smarty->assign('medico',$bus);
     $this->Smarty->display('templates/medicos.tpl');
   }
 
