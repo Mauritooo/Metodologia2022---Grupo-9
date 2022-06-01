@@ -33,7 +33,7 @@
           <h3>¿Listo para trabajar?</h3>
           <h5>Carga disponibilidad para tus médicos <img style="margin-bottom: -5px" src="img/hand-pointing-down.svg"></h5>
         {elseif {$usuario[0].rol} eq "a"}
-          <h2>Eres Administrador <ion-icon name="warning"></ion-icon></h2>
+          <h2>Eres Administrador <img src="img/warning-sharp.svg"></h2>
           <h5>Crea cuentas para el personal <img style="margin-bottom: -5px" src="img/hand-pointing-down.svg"></h5>
         {/if}
         <!-- <ion-datetime readonly presentation="date"></ion-datetime> -->
