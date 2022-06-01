@@ -82,3 +82,9 @@ ion-icon {
     height: 48px;
     font-size: 16px;
 }
+.buttons_medicos{
+    display: flex;
+}
+.buttons_medicos *{
+    font-size: 11px;
+}
