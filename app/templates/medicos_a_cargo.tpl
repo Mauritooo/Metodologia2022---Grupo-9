@@ -16,9 +16,15 @@
 
             </ion-card-header>
             <ion-card-content class="bottom-card-turno">
-                <h4><a href="getformpaciente"><ion-button>
-                Agendar Turno
-                </ion-button></a></h4>
+                <form method="post" action="agendarturnocon">
+                    <ion-item style="display: none">
+                        <ion-input type="text" name="id_medico" value="{$medico['id']}"></ion-input>
+                        <ion-input type="text" name="nombre_apellido" value="{$medico['nombre_apellido']}"></ion-input>
+                        <ion-input type="text" name="especialidad" value="{$medico['especialidad']}"></ion-input>
+                    </ion-item>
+
+                    <ion-button type="submit">Agendar Turno</ion-button>
+                </form>
             </ion-card-content>
 
         </ion-card>

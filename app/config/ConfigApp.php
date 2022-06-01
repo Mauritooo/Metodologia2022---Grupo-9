@@ -30,8 +30,9 @@ class ConfigApp
       'registrarTurnoBySecretary' => 'TurnosController#registrarTurnoBySecretaria',
       'confirmarTurno' => 'TurnosController#confirmarTurnoSecretaria',
       'GetMedicos' => 'TurnosController#GetMedicos',
-      'getformpaciente' => 'TurnosController#GetFormPaciente',
-      'agendarturnopaciente' => 'TurnosController#AgendarTurnoPaciente',
+      'agendarturnocon' => 'TurnosController#AgendarTurnoCon',
+      'agendarturnoparapaciente' => 'TurnosController#agendarTurnoParaPaciente',
+      'confirmardatos' => 'TurnosController#confirmarDatos',
       'borrarturno' => 'TurnosController#BorrarTurno'
     ];
 

@@ -113,23 +113,65 @@ function confirmarTurnoSecretaria()
     $this->modelusuarios->InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico);
 }
 
-  function GetFormPaciente(){
-    $this->view->mostrarFormulario();
-    
+  function AgendarTurnoCon(){
+    $id_medico = $_POST["id_medico"];
+    $nombre_apellido = $_POST["nombre_apellido"];
+    $especialidad = $_POST["especialidad"];
+
+    $this->view->mostrarAgendarTurnoCon($id_medico, $nombre_apellido, $especialidad);
   }
 
-  function AgendarTurnoPaciente(){
-
-    $id_user = $_POST["id_user"];
-    $id_autor = $_POST["id_autor"];
+  function agendarTurnoParaPaciente(){
+    $id_medico = $_POST["id_medico"];
     $fecha = $_POST["fecha"];
     $hora = $_POST["hora"];
     $razon_consulta = $_POST["razon_consulta"];
+    session_start();
+    $nombre_usuario = $_SESSION["User"];
+    $usuario_autor = $this->modelusuarios->getUserStaff($nombre_usuario);
+
+    $id_autor = $usuario_autor[0]['id'];
+
+    $this->view->mostrarConfirmarDatos($id_medico, $fecha, $hora, $razon_consulta, $id_autor);
+
+    // if(!empty($id_autor) && !empty($id_medico)){
+    //   $this->modelturnos->InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico);
+    //   HEADER(INICIO);
+    // }
+  }
+
+  function confirmarDatos(){
     $id_medico = $_POST["id_medico"];
-    if(!empty($id_user) && !empty($id_autor) && !empty($id_medico)){
-      $this->modelturnos->InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico);
-      HEADER(INICIO);
+    $dni_paciente = $_POST["dni"];
+    $fecha = $_POST["fecha"];
+    $hora = $_POST["hora"];
+    $razon_consulta = $_POST["razon_consulta"];
+    $id_autor = $_POST["id_autor"];
+    $nombre_apellido = $_POST["nombre_apellido"];
+    $direccion = $_POST["direccion"];
+    $telefono = $_POST["telefono"];
+    $email = $_POST["email"];
+    $obra_social = $_POST["obra_social"];
+    $num_afiliado = $_POST["num_afiliado"];
+
+    $usuario = $this->modelusuarios->getUser($dni_paciente);
+
+    //antes de insertar el turno compruebo que exista el paciente, si no existe lo creo
+    if ($usuario[0] == NULL) {
+      $this->modelusuarios->InsertarUsuario($dni_paciente,$nombre_apellido,$email,$obra_social, $num_afiliado);
     }
+
+    $usuario = $this->modelusuarios->getUser($dni_paciente);
+    $id_user = $usuario[0]['dni'];
+
+    $this->modelusuarios->InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico);
+
+    $this->view->mostrarTurnoRegistrado($fecha, $hora, $email);
+
+    // if(!empty($id_autor) && !empty($id_medico)){
+    //   $this->modelturnos->InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico);
+    //   HEADER(INICIO);
+    // }
   }
 
   function BorrarTurno($param){
