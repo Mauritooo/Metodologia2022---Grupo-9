@@ -3,7 +3,10 @@ Criterio de Done:
 Buenas Practicas en el codigo:
 
 * se debera usar nombres cortos y representativos para variables y funciones en el codigo.
-* se debe comentar brevemente en una linea el funcionamiento del codigo.
+* “Agregar comentarios en código claros, precisos y objetivos sobre las funciones, siguiendo el esquema:
+    -nombre del método
+    -funcionalidad que desarrolla
+    -tipo de retorno”
 
 Testing:
 
