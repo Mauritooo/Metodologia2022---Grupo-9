@@ -12,9 +12,7 @@ Testing:
 
 * la funcionalidad debe cumplir con lo pactado en la tarjeta.
 * definir brevemente el funcionamiento de los metodos y funciones empleados.
-* tiene que ser testeada por al menos un companero del Dev Team.
-* realizar una captura de la evidencia del testeo al compañero.
+* tiene que estar el nombre del desarrollador que hizo el testeo.
 * se debe commitear que nro de tarjeta de Jira fue resuelta.
-* se debera probar su funcionamiento en diferentes dispositivos.
 
 

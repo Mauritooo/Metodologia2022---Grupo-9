@@ -1,4 +1,5 @@
 Testeo 1:
+Desarrollador: Lautaro Nievas.
 Fecha 28/06/22
 Funcionalidad: Verificar que un usuario este logueado.
 Datos que recibe: DNI del usuario:
