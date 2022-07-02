@@ -1,6 +1,13 @@
-Testeo 1:
+Testeo Login:
 Desarrollador: Lautaro Nievas.
 Fecha 28/06/22
 Funcionalidad: Verificar que un usuario este logueado.
 Datos que recibe: DNI del usuario:
 Datos esperado: Confirmacion si el usuario esta logueado.
+
+Testeo Turnos de un Medico:
+Desarrollador: Lautaro Nievas
+fecha 2/07/22
+Funcionalidad: Obtener los turnos de un medico logueado
+Datos que recibe: ID del medico logueado:
+Datos esperado: Lista con los turnos asiganados al medico.

@@ -20,7 +20,10 @@ class TurnosModel
   }
 
   function ListarTurnosMedicos($id_medico){
-    $sentencia = $this->db->prepare("select * from turno where id_medico=? and fecha >= now()");
+    //Listado de turnos de un medico en especifico (el que este logueado en el momento)
+    //Consulta en la base de datos los turnos que tengan relacionado el id del medico logueado
+    //Retorna una lista de turnos
+    $sentencia = $this->db->prepare("select * from turno where id_medico=?");
     $sentencia->execute(array($id_medico));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
