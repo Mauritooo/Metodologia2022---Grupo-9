@@ -18,6 +18,10 @@ h2 {
     margin-top: 0;
 }
 
+ion-card-header+.card-content-md {
+    padding-top: 12px;
+}
+
 ion-content {
     --ion-background-color: none;
 }
@@ -67,7 +71,7 @@ ion-icon {
 .info-turno {
     display: flex;
     flex-direction: column;
-    padding-left: 12px;
+    padding-left: 16px;
 }
 
 .form_secretary{
@@ -114,8 +118,9 @@ ion-icon {
 
 .bottom-card-turno {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     border-top: 1px solid #00000024;
+    justify-content: space-between;
 }
 
 .bottom-card-turno-registrado {
