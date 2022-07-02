@@ -13,6 +13,7 @@
             <span class="info-turno">
                 <ion-card-title style="font-size: 16px">{$turno['nombre_medico']}</ion-card-title>
                 <ion-card-subtitle style="font-size: 14px">{$turno['razon_consulta']}</ion-card-subtitle>
+                <h4><a href="borrarturno/{$turno['id_turno']}"><ion-button color="danger">Borrar</ion-button>
             </span>
 
         </ion-card-header>
@@ -20,5 +21,6 @@
             <h5>Fecha: {$turno['fecha']}</h5>
             <h5>Hora: {$turno['hora']}</h5>
         </ion-card-content>
+        
     </ion-card>
 {/foreach}
