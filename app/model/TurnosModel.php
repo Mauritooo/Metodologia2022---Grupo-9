@@ -13,8 +13,10 @@ class TurnosModel
     return new PDO('mysql:host='.HOST.'; dbname='.DBNOMBRE.';charset=utf8', USER, PASS);
   }
 
-  //Esta funcion obtiene los turnos de los usuarios de la base de datos ordenados cronológicamente
   function GetTurnosUsuario($id_usuario){
+    //Listado de turnos de un usuario ordenado cronologicamente
+    //Recibe el id del usaurio logueado
+    //Retorna una lista con los turnos ordenados
     $sentencia = $this->db->prepare("select * from turno where id_usuario=? and fecha >= now() order by fecha");
     $sentencia->execute(array($id_usuario));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
