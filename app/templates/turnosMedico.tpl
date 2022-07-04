@@ -58,6 +58,9 @@
 {/foreach}
 
 <script language="javascript" type="text/javascript">
+//filtrarTurnosMedico
+//oculta o muestra los turnos segun los valores en los inputs
+//no retorna nada
 function filtrarTurnosMedico() {
     let turnos = document.getElementsByName('turno-medico');
     let filtro_turno = document.getElementById('turno').value;
@@ -97,6 +100,9 @@ function filtrarTurnosMedico() {
     }
 }
 
+//limpiar
+//pone el valor de los inputs en default y hace que se muestren todos los turnos
+//no tiene retorno
 function limpiar() {
     let turnos = document.getElementsByName('turno-medico');
     let filtro_turno = document.getElementById('turno');
