@@ -32,3 +32,19 @@ fecha 3/07/22
 Funcionalidad: Como Secretaria cancelar un turno proximo
 Datos que recibe: ID del turno que se quiere cancelar:
 Datos esperado: Lista de los turnos de la Secretaria actualizada, sin el turno cancelado.
+
+Testeo filtrar turnos por franja horaria y rango de dias como médico:
+Desarrollador: Nahuel Ruppel
+fecha 4/07/22
+Funcionalidad: Como médico quiero poder filtrar los turnos por franja horaria (mañana o tarde) y rango de días
+Datos que recibe: Rango de dias
+Comportamiento esperado: Lista de turnos con solo aquellos que cumplen el rango de dias indicado
+Comportamiento ocurrido: Se ocultan aquellos turnos que no cumplen el rango y quedan solo los que si
+
+Testeo filtrar turnos por franja horaria y rango de dias como médico:
+Desarrollador: Nahuel Ruppel
+fecha 4/07/22
+Funcionalidad: Como médico quiero poder filtrar los turnos por franja horaria (mañana o tarde) y rango de días
+Datos que recibe: Franja horaria (mañana)
+Comportamiento esperado: Oculta aquellos turnos que pertenezcan a la franja horaria "tarde"
+Comportamiento ocurrido: Se ocultan los turnos que son de la franja horaria "tarde"
