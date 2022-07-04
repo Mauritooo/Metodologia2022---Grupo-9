@@ -11,3 +11,24 @@ fecha 2/07/22
 Funcionalidad: Obtener los turnos de un medico logueado
 Datos que recibe: ID del medico logueado:
 Datos esperado: Lista con los turnos asiganados al medico.
+
+Testeo Turnos proximos de un paciente:
+Desarrollador: Yair Reynaldo
+fecha 3/07/22
+Funcionalidad: Obtener los turnos proximos de un paciente logueado
+Datos que recibe: ID del paciente logueado:
+Datos esperado: Lista con los turnos proximos del paciente.
+
+Testeo cancelar turno como Paciente:
+Desarrollador: Yair Reynaldo
+fecha 3/07/22
+Funcionalidad: Como paciente cancelar un turno proximo
+Datos que recibe: ID del turno que se quiere cancelar:
+Datos esperado: Lista de los turnos proximos actualizada, sin el turno cancelado.
+
+Testeo cancelar turno como Secretaria:
+Desarrollador: Yair Reynaldo
+fecha 3/07/22
+Funcionalidad: Como Secretaria cancelar un turno proximo
+Datos que recibe: ID del turno que se quiere cancelar:
+Datos esperado: Lista de los turnos de la Secretaria actualizada, sin el turno cancelado.
