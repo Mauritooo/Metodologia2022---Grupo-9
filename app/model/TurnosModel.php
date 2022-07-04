@@ -36,17 +36,23 @@ class TurnosModel
   }
 
   function ListarMedicosAcargo($id){
+    //Listado de medicos a cargo de una secretaria
+    //Consulta en la base de datos los medicos que tiene asociada la secretaria logueada
+    //Retorna una lista de medicos
     $sentencia = $this->db->prepare("select * from usuario join a_cargo on id = id_medico where id_secretaria = ?");
     $sentencia->execute(array($id));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
   function InsertarTurno($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico){
+    //Se inserta un turno con sus datos correspondiente
     $sentencia = $this->db->prepare("INSERT INTO turno(id_usuario, id_autor, fecha, hora, razon_consulta, id_medico) VALUES(?,?,?,?,?,?)");
     $sentencia->execute(array($id_user, $id_autor, $fecha, $hora, $razon_consulta, $id_medico));
   }
 
   function DeleteTurno($id){
+    //Se elimina un turno en especifico
+    //Se elimina un turno mediando el id del mismo
     $sentencia = $this->db->prepare("delete from turno where id_turno=?");
     $sentencia->execute(array($id));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);

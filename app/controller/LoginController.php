@@ -75,6 +75,7 @@ class LoginController
   }
 
   function registrarUsuario(){
+    //Recibe los datos del usuario
     $nombre_apellido = $_POST["name_apellido"];
     $dni = $_POST["dni"];
     $direccion = $_POST["direccion"];
@@ -83,28 +84,29 @@ class LoginController
     $obraSocial = $_POST["obraSocial"];
     $nro_afiliado = $_POST["nro_afiliado"];
     
-    if($nombre_apellido && $dni && $obraSocial && $nro_afiliado){
+    if($nombre_apellido && $dni && $obraSocial && $nro_afiliado){//Si existen los campos obligarios se inserta el usuario
       $this->model->InsertarUsuario($dni, $nombre_apellido, $nro_afiliado, $obraSocial, $email);
-      $this->verificarLogin();
+      $this->verificarLogin();//En caso de insertarse se verifica el loguin para ingresar a la app
     }
   }
   function registrarUsuarioByAdmin(){
+    //Se reciben los datos de la secretaria o medico
     $user = $_POST["user"];
     $password = $_POST["password"];
     $confirmPassword = $_POST["confirmPassword"];
     $tipo = $_POST["tipo"];
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    if ($tipo == 'm') {
+    if ($tipo == 'm') {//En caso de ser medico se le asigna su especialidad y obra social
       $especialidad = $_POST["especialidad"];
       $obra_social = $_POST["obra_social"];
 
       $this->model->InsertarUsuarioByAdmin($user,$hash,$tipo,$especialidad,$obra_social);
-    } else {
+    } else {//En caso de ser secretaria se la asigna normalmente
       $this->model->InsertarUsuarioByAdmin($user,$hash,$tipo);
     }
 
-    HEADER(INICIO);
+    HEADER(INICIO);// Se vuelve al inicio
   }
 
 }
