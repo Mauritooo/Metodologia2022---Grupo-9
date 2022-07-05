@@ -40,11 +40,6 @@ class LoginController
       session_start();
       $_SESSION["User"] = $dni;
       header(INICIO);
-      // if ($dbUser[0]["admin"] == 1){
-      //   header(ADMIN);
-      // }else{
-      //   header(HOME);
-      // }
         
     }else{
       HEADER(REGISTER);
@@ -61,11 +56,6 @@ class LoginController
         session_start();
         $_SESSION["User"] = $usuario;
         header(INICIO);
-        // if ($dbUser[0]["admin"] == 1){
-        //   header(ADMIN);
-        // }else{
-        //   header(HOME);
-        // }
       } else {
         $this->view->mostrarLogin(true, "Contraseña incorrecta");
       }
