@@ -3,35 +3,40 @@ Desarrollador: Lautaro Nievas.
 Fecha 28/06/22
 Funcionalidad: Verificar que un usuario este logueado.
 Datos que recibe: DNI del usuario:
-Datos esperado: Confirmacion si el usuario esta logueado.
+Datos esperados: Confirmacion si el usuario esta logueado.
+Falla: NO
 
 Testeo Turnos de un Medico:
 Desarrollador: Lautaro Nievas
 fecha 2/07/22
 Funcionalidad: Obtener los turnos de un medico logueado
 Datos que recibe: ID del medico logueado:
-Datos esperado: Lista con los turnos asiganados al medico.
+Datos esperados: Lista con los turnos asiganados al medico.
+Falla: NO
 
 Testeo Turnos proximos de un paciente:
 Desarrollador: Yair Reynaldo
 fecha 3/07/22
 Funcionalidad: Obtener los turnos proximos de un paciente logueado
 Datos que recibe: ID del paciente logueado:
-Datos esperado: Lista con los turnos proximos del paciente.
+Datos esperados: Lista con los turnos proximos del paciente.
+Falla: NO
 
 Testeo cancelar turno como Paciente:
 Desarrollador: Yair Reynaldo
 fecha 3/07/22
 Funcionalidad: Como paciente cancelar un turno proximo
 Datos que recibe: ID del turno que se quiere cancelar:
-Datos esperado: Lista de los turnos proximos actualizada, sin el turno cancelado.
+Datos esperados: Lista de los turnos proximos actualizada, sin el turno cancelado.
+Falla: NO
 
 Testeo cancelar turno como Secretaria:
 Desarrollador: Yair Reynaldo
 fecha 3/07/22
 Funcionalidad: Como Secretaria cancelar un turno proximo
 Datos que recibe: ID del turno que se quiere cancelar:
-Datos esperado: Lista de los turnos de la Secretaria actualizada, sin el turno cancelado.
+Datos esperados: Lista de los turnos de la Secretaria actualizada, sin el turno cancelado.
+Falla: NO
 
 Testeo filtrar turnos por franja horaria y rango de dias como médico:
 Desarrollador: Nahuel Ruppel
@@ -40,6 +45,7 @@ Funcionalidad: Como médico quiero poder filtrar los turnos por franja horaria (
 Datos que recibe: Rango de dias
 Comportamiento esperado: Lista de turnos con solo aquellos que cumplen el rango de dias indicado
 Comportamiento ocurrido: Se ocultan aquellos turnos que no cumplen el rango y quedan solo los que si
+Falla: NO
 
 Testeo filtrar turnos por franja horaria y rango de dias como médico:
 Desarrollador: Nahuel Ruppel
@@ -48,3 +54,4 @@ Funcionalidad: Como médico quiero poder filtrar los turnos por franja horaria (
 Datos que recibe: Franja horaria (mañana)
 Comportamiento esperado: Oculta aquellos turnos que pertenezcan a la franja horaria "tarde"
 Comportamiento ocurrido: Se ocultan los turnos que son de la franja horaria "tarde"
+Falla: NO
