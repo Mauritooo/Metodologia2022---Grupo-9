@@ -32,6 +32,7 @@ class TurnosModel
   }
 
   function ListarTurnosSecretaria($id_autor){
+    //Retorna una lista de turnos de una secretaria en particular de la tabla turno
     $sentencia = $this->db->prepare("select * from turno where id_autor=?");
     $sentencia->execute(array($id_autor));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);

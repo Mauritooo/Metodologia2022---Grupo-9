@@ -42,9 +42,8 @@ class UsuarioModel
   }
 
   function GetMedicos($bus,$os,$esp){
+    //Retorna los médicos por obra social y especialidad
     $sentencia = $this->db->prepare("select * from usuario where rol=? and nombre_apellido like concat('%',?,'%') and especialidad like concat('%',?,'%') and obra_social like concat('%',?,'%') ");
-    #$sentencia = $this->db->prepare("select * from usuario where rol='m'" );
-    #$sentencia->execute(); 
     $sentencia->execute(array('m',$bus,$esp,$os));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
@@ -65,12 +64,14 @@ class UsuarioModel
   }
 
   function GetEspecialidades(){
+    //Retorna todas las especialidades de los médicos en la tabla usuario
     $sentencia = $this->db->prepare("select distinct especialidad as esp from usuario");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
   function GetObraSociales(){
+    ////Retorna todas las obras sociales con las que atiede un médico en la tabla usuario
     $sentencia = $this->db->prepare("select distinct obra_social as os from usuario");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
