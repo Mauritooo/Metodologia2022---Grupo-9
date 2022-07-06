@@ -13,5 +13,11 @@ Testing:
 * La funcionalidad debe cumplir con lo pactado en la tarjeta.
 * Definir brevemente el funcionamiento de los métodos y funciones empleados.
 * Se debe commitear que número de tarjeta de Jira fue resuelta.
+* Realizar un template de testeo contemplando:
+        -Datos que tiene el sistema.
+        -Datos de entrada.
+        -Salida esperada.
+        -Salida obtenida.
+        -Comentarios(opcional)
 
 
